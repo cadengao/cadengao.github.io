@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "content": "\r\n# 操作步骤\r\n1. 检查当前环境：执行\r\n    ```\r\n    echo $LANG\r\n    ```\r\n    > 注：如果屏幕显示en_US.UTF-8，说明是英语环境(有中文字符文件时会乱码)，需要切换到中文环境，中文环境下会显示zh_CN.UTF-8。\r\n\r\n2. 安装中文语言包：执行\r\n    ```\r\n    apt-get update && apt-get install language-pack-zh-hans\r\n    ```\r\n3. 更改 locale：执行\r\n    ```\r\n    vim /etc/default/locale\r\n    ```\r\n    ,用以下内容直接覆盖\r\n    ```\r\n    LANG=\"zh_CN.UTF-8\"\r\n    LANGUAGE=\"zh_CN:zh\"\r\n    LC_NUMERIC=\"zh_CN\"\r\n    LC_TIME=\"zh_CN\"\r\n    LC_MONETARY=\"zh_CN\"\r\n    LC_PAPER=\"zh_CN\"\r\n    LC_NAME=\"zh_CN\"\r\n    LC_ADDRESS=\"zh_CN\"\r\n    LC_TELEPHONE=\"zh_CN\"\r\n    LC_MEASUREMENT=\"zh_CN\"\r\n    LC_IDENTIFICATION=\"zh_CN\"\r\n    LC_ALL=\"zh_CN.UTF-8\"\r\n    ```\r\n4. 更改 environment：执行\r\n    ```\r\n    vim /etc/environment\r\n    ```\r\n    ,用以下内容覆盖(注：原来可能有首行“PATH=...”,如果有的话，不要动，另起一行追加即可)\r\n    ```\r\n    LANG=\"zh_CN.UTF-8\"\r\n    LANGUAGE=\"zh_CN:zh\"\r\n    LC_NUMERIC=\"zh_CN\"\r\n    LC_TIME=\"zh_CN\"\r\n    LC_MONETARY=\"zh_CN\"\r\n    LC_PAPER=\"zh_CN\"\r\n    LC_NAME=\"zh_CN\"\r\n    LC_ADDRESS=\"zh_CN\"\r\n    LC_TELEPHONE=\"zh_CN\"\r\n    LC_MEASUREMENT=\"zh_CN\"\r\n    LC_IDENTIFICATION=\"zh_CN\"\r\n    LC_ALL=\"zh_CN.UTF-8\"\r\n    ```\r\n5. 重启：执行\r\n    ```\r\n    reboot\r\n    ```\r\n6. 如果第1步还不生效，可执行\r\n    ```\r\n    vi ~/.bashrc\r\n    ```\r\n7. 将下面的语句添加到文件的最后一行\r\n    ```\r\n    export LANG=zh_CN.utf8\r\n    ```\r\n",
+      "data": {
+        "title": "ubuntu设置中文环境",
+        "date": "2024-01-22 12:27:26",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "ubuntu-she-zhi-zhong-wen-huan-jing"
+    },
+    {
       "content": "> 欢迎来到我的小站呀，很高兴遇见你！🤝\n\n## 🏠 关于本站\n\n## 👨‍💻 博主是谁\n\n## ⛹ 兴趣爱好\n\n## 📬 联系我呀\n",
       "data": {
         "title": "关于",

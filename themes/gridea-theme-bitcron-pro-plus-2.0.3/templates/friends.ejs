@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <%- include('./_blocks/head', { siteTitle: `友情链接 - ${themeConfig.siteName}` }) %>
+</head>
+
+<body>
+<div class="main gt-bg-theme-color-first">
+        <div class="main-content">
+            <%- include('./_blocks/header') %>
+            <div class="friend-container">
+                <div class="friend-detail">
+                    <article>
+
+                        <!-- <div class="post-content-wrapper"> -->
+                            <div class="post-content">
+                                <div class="friends-desc">
+                                    <%- site.customConfig.frienddesc %>
+                                </div>
+                                <!-- <h3 id="linklist">友链列表</h3> -->
+                                <% if (site.customConfig.friends) { %>
+                                    <% site.customConfig.friends.forEach(function(friend) { %>
+                                        <div class="friend-box">
+                                            <img class="friend-avatar" src="<%= friend.siteLogo %>">
+                                            <div class="flink-info">
+                                                <% if(friend.siteLink == "/friendssq") { %>
+                                                    <a class="selected active current nav__item link-instanted" href="<%= friend.siteLink %>" target="_Self"><%= friend.siteName %></a>
+                                                    <% } else { %>
+                                                        <a class="selected active current nav__item link-instanted" href="<%= friend.siteLink %>" target="_blank"><%= friend.siteName %></a>
+                                                        <% } %>
+                                                <br />
+                                                <div class="selected active current nav__item link-instanted">
+                                                    <%= friend.description %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <% }); %>
+                                <% } else { %>
+                                    暂无友链，快来申请吧！
+                                <% } %>
+                            </div>
+                        <!-- </div> -->
+                    </article>
+                </div>
+                <% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
+                    <% if (commentSetting.commentPlatform === 'gitalk') { %>
+                        <%- include('./_blocks/gitalk') %>
+                    <% } %>
+                    <% if (commentSetting.commentPlatform === 'disqus') { %>
+                        <%- include('./_blocks/disqus') %>
+                    <% } %>
+                <% } %>
+                        <%- include('./_blocks/valine') %>
+            </div>
+
+
+
+            <%- include('./_blocks/footer') %>
+        </div>
+    </div>
+</body>
+
+</html>
