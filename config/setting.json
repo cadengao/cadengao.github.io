@@ -1,12 +1,14 @@
 {
   "config": {
+    "branch": "gridea-blog",
+    "domain": "https://cadengao.github.io",
+    "email": "cadengao@163.com",
+    "enabledProxy": "direct",
     "platform": "github",
-    "domain": "",
-    "repository": "",
-    "branch": "",
-    "username": "",
-    "email": "",
-    "token": ""
+    "privateKey": "",
+    "repository": "cadengao.github.io",
+    "token": "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",
+    "username": "cadengao"
   },
   "comment": {
     "commentPlatform": "gitalk",
