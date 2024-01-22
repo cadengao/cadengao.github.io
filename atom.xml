@@ -1,15 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://cadengao.github.io</id>
-    <title>Gridea</title>
-    <updated>2024-01-22T04:14:36.659Z</updated>
+    <title>小高的知识库</title>
+    <updated>2024-01-22T12:16:29.223Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://cadengao.github.io"/>
     <link rel="self" href="https://cadengao.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
     <logo>https://cadengao.github.io/images/avatar.png</logo>
     <icon>https://cadengao.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2024, Gridea</rights>
+    <rights>All rights reserved 2024, 小高的知识库</rights>
+    <entry>
+        <title type="html"><![CDATA[ubuntu设置中文环境]]></title>
+        <id>https://cadengao.github.io/post/ubuntu-she-zhi-zhong-wen-huan-jing/</id>
+        <link href="https://cadengao.github.io/post/ubuntu-she-zhi-zhong-wen-huan-jing/">
+        </link>
+        <updated>2024-01-22T04:27:26.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="操作步骤">操作步骤</h1>
+<ol>
+<li>
+<p>检查当前环境：执行</p>
+<pre><code>echo $LANG
+</code></pre>
+<blockquote>
+<p>注：如果屏幕显示en_US.UTF-8，说明是英语环境(有中文字符文件时会乱码)，需要切换到中文环境，中文环境下会显示zh_CN.UTF-8。</p>
+</blockquote>
+</li>
+<li>
+<p>安装中文语言包：执行</p>
+<pre><code>apt-get update &amp;&amp; apt-get install language-pack-zh-hans
+</code></pre>
+</li>
+<li>
+<p>更改 locale：执行</p>
+<pre><code>vim /etc/default/locale
+</code></pre>
+<p>,用以下内容直接覆盖</p>
+<pre><code>LANG=&quot;zh_CN.UTF-8&quot;
+LANGUAGE=&quot;zh_CN:zh&quot;
+LC_NUMERIC=&quot;zh_CN&quot;
+LC_TIME=&quot;zh_CN&quot;
+LC_MONETARY=&quot;zh_CN&quot;
+LC_PAPER=&quot;zh_CN&quot;
+LC_NAME=&quot;zh_CN&quot;
+LC_ADDRESS=&quot;zh_CN&quot;
+LC_TELEPHONE=&quot;zh_CN&quot;
+LC_MEASUREMENT=&quot;zh_CN&quot;
+LC_IDENTIFICATION=&quot;zh_CN&quot;
+LC_ALL=&quot;zh_CN.UTF-8&quot;
+</code></pre>
+</li>
+<li>
+<p>更改 environment：执行</p>
+<pre><code>vim /etc/environment
+</code></pre>
+<p>,用以下内容覆盖(注：原来可能有首行“PATH=...”,如果有的话，不要动，另起一行追加即可)</p>
+<pre><code>LANG=&quot;zh_CN.UTF-8&quot;
+LANGUAGE=&quot;zh_CN:zh&quot;
+LC_NUMERIC=&quot;zh_CN&quot;
+LC_TIME=&quot;zh_CN&quot;
+LC_MONETARY=&quot;zh_CN&quot;
+LC_PAPER=&quot;zh_CN&quot;
+LC_NAME=&quot;zh_CN&quot;
+LC_ADDRESS=&quot;zh_CN&quot;
+LC_TELEPHONE=&quot;zh_CN&quot;
+LC_MEASUREMENT=&quot;zh_CN&quot;
+LC_IDENTIFICATION=&quot;zh_CN&quot;
+LC_ALL=&quot;zh_CN.UTF-8&quot;
+</code></pre>
+</li>
+<li>
+<p>重启：执行</p>
+<pre><code>reboot
+</code></pre>
+</li>
+<li>
+<p>如果第1步还不生效，可执行</p>
+<pre><code>vi ~/.bashrc
+</code></pre>
+</li>
+<li>
+<p>将下面的语句添加到文件的最后一行</p>
+<pre><code>export LANG=zh_CN.utf8
+</code></pre>
+</li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://cadengao.github.io/post/hello-gridea/</id>
