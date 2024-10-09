@@ -59,4 +59,5 @@ Uno.Fonts.OpenSans/Fonts/OpenSans_SemiCondensed-MediumItalic.ttf
 Uno.Fonts.OpenSans/Fonts/OpenSans_SemiCondensed-Regular.ttf
 Uno.Fonts.OpenSans/Fonts/OpenSans_SemiCondensed-SemiBold.ttf
 Uno.Fonts.OpenSans/Fonts/OpenSans_SemiCondensed-SemiBoldItalic.ttf
+CadenBase.staticwebassets.runtime.json
 CadenBase.exe
