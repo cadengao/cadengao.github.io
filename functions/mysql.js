@@ -21,6 +21,10 @@ exports.handler = async (event, context) => {
         queryCache = {};  // 清空缓存
         return {
             statusCode: 200,
+            headers: {
+                'Access-Control-Allow-Origin': '*', // 允许的来源
+                'Content-Type': 'application/json' // 设置内容类型
+            },
             body: JSON.stringify({ message: 'Query cache cleared.' }),
         };
     }
@@ -29,6 +33,10 @@ exports.handler = async (event, context) => {
     if (!sql.trim()) {
         return {
             statusCode: 400,
+            headers: {
+                'Access-Control-Allow-Origin': '*', // 允许的来源
+                'Content-Type': 'application/json' // 设置内容类型
+            },
             body: JSON.stringify({ message: 'SQL query is required.' }),
         };
     }
@@ -37,6 +45,10 @@ exports.handler = async (event, context) => {
     if (queryCache[sql]) {
         return {
             statusCode: 200,
+            headers: {
+                'Access-Control-Allow-Origin': '*', // 允许的来源
+                'Content-Type': 'application/json' // 设置内容类型
+            },
             body: JSON.stringify(JSON.parse(queryCache[sql])),
         };
     }
@@ -57,12 +69,20 @@ exports.handler = async (event, context) => {
         // 返回查询结果
         return {
             statusCode: 200,
+            headers: {
+                'Access-Control-Allow-Origin': '*', // 允许的来源
+                'Content-Type': 'application/json' // 设置内容类型
+            },
             body: JSON.stringify(rows),
         };
     } catch (error) {
         console.error('Database query error:', error);
         return {
             statusCode: 500,
+            headers: {
+                'Access-Control-Allow-Origin': '*', // 允许的来源
+                'Content-Type': 'application/json' // 设置内容类型
+            },
             body: JSON.stringify({ message: 'Internal Server Error', error: error.message }),
         };
     }
