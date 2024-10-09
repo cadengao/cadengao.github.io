@@ -1,0 +1,22 @@
+﻿{
+  "UUID": "54197715.119618116",
+  "DocId": 0,
+  "Type": null,
+  "Format": null,
+  "Title": "WPF-\u901A\u77E5\u66F4\u6539INotifyPropertyChanged\u3010Area\u3011",
+  "TagDatas": null,
+  "Slug": null,
+  "Tags": null,
+  "Description": null,
+  "Cover": null,
+  "BookId": 0,
+  "BookName": null,
+  "Public": 0,
+  "WordCount": 0,
+  "CreatedAt": "0001-01-01T00:00:00",
+  "UpdatedAt": "0001-01-01T00:00:00",
+  "BodyHtml": "\u003C!doctype html\u003E\u003Cdiv class=\u0022lake-content\u0022 typography=\u0022classic\u0022\u003E\u003Cp id=\u0022u529d98cb\u0022 class=\u0022ne-p\u0022\u003E\u003Cspan class=\u0022ne-text\u0022 style=\u0022color: rgb(44, 44, 44); background-color: rgb(250, 250, 250); font-size: 16px\u0022\u003E\u6709\u4E24\u79CD\u65B9\u5F0F\u003C/span\u003E\u003C/p\u003E\u003Col class=\u0022ne-ol\u0022\u003E\u003Cli id=\u0022u6b1091e7\u0022 data-lake-index-type=\u00220\u0022\u003E\u003Cstrong\u003E\u003Cspan class=\u0022ne-text\u0022 style=\u0022color: rgb(44, 44, 44); background-color: rgb(250, 250, 250)\u0022\u003E\u7B80\u5355\u65B9\u5F0F-\u003C/span\u003E\u003C/strong\u003E\u003Cstrong\u003E\u003Cspan class=\u0022ne-text\u0022 style=\u0022color: #DF2A3F; background-color: rgb(250, 250, 250)\u0022\u003E\u5728\u8D4B\u503C\u7684\u65F6\u5019\u8C03\u7528PropertyChanged\u003C/span\u003E\u003C/strong\u003E\u003C/li\u003E\u003C/ol\u003E\u003Cpre data-language=\u0022csharp\u0022 id=\u0022u8XD7\u0022 class=\u0022ne-codeblock language-csharp\u0022\u003E\u003Ccode\u003Enamespace WpfApp1\n{\n    public class MainViewModel:INotifyPropertyChanged\n    {\n        public MyCommand ShowCommand { get; set; }\n\n        public event PropertyChangedEventHandler PropertyChanged;\n\n        public string Name\n        {\n            get { return name; }\n            set { \n\t\t\t\t\tname = value;\n                \t//\u901A\u77E5\u5BA2\u6237\u7AEF\u5185\u5BB9\u66F4\u6539\u7684\u65B9\u5F0F\u4E00\u79CD\n                \tPropertyChanged?.Invoke(this, new PropertyChangedEventArgs(\u0026quot;Name\u0026quot;)); \n                }\n        }\n\n        public string name;\n\n        public MainViewModel()\n        {\n            Name = \u0026quot;Hello World\u0026quot;;\n            ShowCommand = new MyCommand(Show);\n        }\n\n\n        public void Show()\n        {\n            Name = \u0026quot;\u70B9\u51FB\u4E86Button\u0026quot;;\n            MessageBox.Show(Name);\n\n        }\n    }\n}\u003C/code\u003E\u003C/pre\u003E\u003Col start=\u00222\u0022 class=\u0022ne-ol\u0022\u003E\u003Cli id=\u0022ue30dde24\u0022 data-lake-index-type=\u00220\u0022\u003E\u003Cstrong\u003E\u003Cspan class=\u0022ne-text\u0022 style=\u0022color: rgb(44, 44, 44)\u0022\u003E\u81EA\u52A8\u7ED1\u5B9A-\u003C/span\u003E\u003C/strong\u003E\u003Cstrong\u003E\u003Cspan class=\u0022ne-text\u0022 style=\u0022color: #DF2A3F; background-color: rgb(250, 250, 250)\u0022\u003E\u5C01\u88C5\u4E00\u4E2A\u4E8B\u4EF6\u8C03\u7528OnPropertyChanged\u003C/span\u003E\u003C/strong\u003E\u003C/li\u003E\u003C/ol\u003E\u003Cpre data-language=\u0022csharp\u0022 id=\u0022KhCml\u0022 class=\u0022ne-codeblock language-csharp\u0022\u003E\u003Ccode\u003Enamespace WpfApp1\n{\n    public class MainViewModel:INotifyPropertyChanged\n    {\n        public MyCommand ShowCommand { get; set; }\n\n        public event PropertyChangedEventHandler PropertyChanged;\n\n        public void OnPropertyChanged([CallerMemberName]string propertyName=\u0026quot;\u0026quot;)\n        {\n            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));\n        }\n\n        public string Name\n        {\n            get { return name; }\n            set { \n\t\t\t\t\tname = value;\n                \t//\u901A\u77E5\u5BA2\u6237\u7AEF\u5185\u5BB9\u66F4\u6539\u7684\u65B9\u5F0F\u4E00\u79CD\n                \tOnPropertyChanged();\n                }\n        }\n\n        public string name;\n          \n        public MainViewModel()\n        {\n            Name = \u0026quot;Hello World\u0026quot;;\n            ShowCommand = new MyCommand(Show);\n        }\n\n\n        public void Show()\n        {\n            Name = \u0026quot;\u70B9\u51FB\u4E86Button\u0026quot;;\n            MessageBox.Show(Name);\n\n        }\n    }\n}\u003C/code\u003E\u003C/pre\u003E\u003C/div\u003E",
+  "Body": null,
+  "CosUpdatedAt": "0001-01-01T00:00:00",
+  "BodyHtmlCosUrl": null
+}
