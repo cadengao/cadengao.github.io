@@ -9,28 +9,12 @@ const connectionConfig = {
     database: process.env.DB_NAME
 };
 
-// 存储 SQL 查询结果的缓存
-let queryCache = {};
-
 exports.handler = async (event, context) => {
     // 解析查询字符串参数
     const { sql } = event.queryStringParameters || {};
     
-    // 如果传入的 sql 为空，清空缓存
-    if (!sql) {
-        queryCache = {};  // 清空缓存
-        return {
-            statusCode: 200,
-            headers: {
-                'Access-Control-Allow-Origin': '*', // 允许的来源
-                'Content-Type': 'application/json' // 设置内容类型
-            },
-            body: JSON.stringify({ message: 'Query cache cleared.' }),
-        };
-    }
-
     // 返回错误信息，如果 sql 为空或无效
-    if (!sql.trim()) {
+    if (!sql || !sql.trim()) {
         return {
             statusCode: 400,
             headers: {
@@ -41,27 +25,12 @@ exports.handler = async (event, context) => {
         };
     }
 
-    // 检查缓存中是否已存在查询结果
-    if (queryCache[sql]) {
-        return {
-            statusCode: 200,
-            headers: {
-                'Access-Control-Allow-Origin': '*', // 允许的来源
-                'Content-Type': 'application/json' // 设置内容类型
-            },
-            body: JSON.stringify(JSON.parse(queryCache[sql])),
-        };
-    }
-
     try {
         // 创建数据库连接
         const connection = await mysql.createConnection(connectionConfig);
         
         // 执行查询
         const [rows] = await connection.execute(sql);
-        
-        // 将结果存入缓存
-        queryCache[sql] = JSON.stringify(rows);
 
         // 关闭连接
         await connection.end();
