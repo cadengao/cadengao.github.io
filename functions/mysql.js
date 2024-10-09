@@ -6,20 +6,36 @@ const connectionConfig = {
     port: process.env.DB_PORT,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    database: process.env.DB_NAME,
+    connectTimeout: process.env.DB_CONNECT_TIMEOUT
 };
 
+async function createConnectionWithRetry(retries = 3) {
+    while (retries) {
+        try {
+            const connection = await mysql.createConnection(connectionConfig);
+            return connection;
+        } catch (error) {
+            console.error('Database connection error:', error);
+            retries -= 1;
+            if (retries === 0) {
+                throw new Error('Unable to connect to the database after several attempts');
+            }
+            // 等待一段时间后重试
+            await new Promise(resolve => setTimeout(resolve, 2000));
+        }
+    }
+}
+
 exports.handler = async (event, context) => {
-    // 解析查询字符串参数
     const { sql } = event.queryStringParameters || {};
     
-    // 返回错误信息，如果 sql 为空或无效
     if (!sql || !sql.trim()) {
         return {
             statusCode: 400,
             headers: {
-                'Access-Control-Allow-Origin': '*', // 允许的来源
-                'Content-Type': 'application/json' // 设置内容类型
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({ message: 'SQL query is required.' }),
         };
@@ -27,7 +43,7 @@ exports.handler = async (event, context) => {
 
     try {
         // 创建数据库连接
-        const connection = await mysql.createConnection(connectionConfig);
+        const connection = await createConnectionWithRetry();
         
         // 执行查询
         const [rows] = await connection.execute(sql);
@@ -35,12 +51,11 @@ exports.handler = async (event, context) => {
         // 关闭连接
         await connection.end();
 
-        // 返回查询结果
         return {
             statusCode: 200,
             headers: {
-                'Access-Control-Allow-Origin': '*', // 允许的来源
-                'Content-Type': 'application/json' // 设置内容类型
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(rows),
         };
@@ -49,8 +64,8 @@ exports.handler = async (event, context) => {
         return {
             statusCode: 500,
             headers: {
-                'Access-Control-Allow-Origin': '*', // 允许的来源
-                'Content-Type': 'application/json' // 设置内容类型
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({ message: 'Internal Server Error', error: error.message }),
         };
