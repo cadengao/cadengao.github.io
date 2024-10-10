@@ -1,0 +1,22 @@
+﻿{
+  "UUID": "54197723.115155527",
+  "id": 0,
+  "type": null,
+  "format": null,
+  "title": "魔方总结【Resource】",
+  "tags": null,
+  "slug": null,
+  "Tags": null,
+  "description": null,
+  "cover": null,
+  "book_id": 0,
+  "BookName": null,
+  "public": 0,
+  "word_count": 0,
+  "created_at": "0001-01-01T00:00:00",
+  "updated_at": "0001-01-01T00:00:00",
+  "body_html": "<!doctype html><div class=\"lake-content\" typography=\"classic\"><ol data-index-type=\"2\" class=\"ne-ol\"><li id=\"u6202dc7b\"><span class=\"ne-text\">拼好白面并对齐底层中间块</span></li></ol><div class=\"ne-quote\"><p id=\"u4a8a9eab\" class=\"ne-p\"><span class=\"ne-text\">中间块：Ｒ'ＵＦ'Ｕ'</span></p><p id=\"u1b5079fd\" class=\"ne-p\"><span class=\"ne-text\">角块：Ｒ'Ｄ'ＲＤ</span></p></div><ol start=\"2\" class=\"ne-ol\"><li id=\"u1efe1647\"><span class=\"ne-text\">拼好白面底层和中间层</span></li></ol><div class=\"ne-quote\"><p id=\"udee4dd92\" class=\"ne-p\"><span class=\"ne-text\">公式１：ＦＵＦＵＦＵ'Ｆ'Ｕ'Ｆ'</span></p><p id=\"ufae20b76\" class=\"ne-p\"><span class=\"ne-text\">公式２：Ｒ'Ｕ'Ｒ'Ｕ'Ｒ'ＵＲＵＲ</span></p></div><ol start=\"3\" class=\"ne-ol\"><li id=\"u4a8cec5c\"><span class=\"ne-text\">拼好顶层黄色十字</span></li></ol><div class=\"ne-quote\"><p id=\"u564eabbb\" class=\"ne-p\"><span class=\"ne-text\">ＦＲＵＲ'Ｕ'Ｆ'</span></p></div><ol start=\"4\" class=\"ne-ol\"><li id=\"u1dfc67b9\"><span class=\"ne-text\">拼好顶面黄色</span></li></ol><div class=\"ne-quote\"><p id=\"u8c9da31f\" class=\"ne-p\"><span class=\"ne-text\">放置：黄色十字面非白色块的个数对应“２后４左”</span></p><p id=\"uc038d4da\" class=\"ne-p\"><span class=\"ne-text\">小鱼１：Ｒ'Ｕ'ＲＵ'Ｒ'Ｕ2Ｒ，侧面黄色在左，顺时针</span><span class=\"ne-text\" style=\"font-size: 16px\"></span></p><p id=\"u664bb7a5\" class=\"ne-p\"><span class=\"ne-text\">小鱼２：ＦＵＦ'ＵＦＵ2Ｆ'，侧面黄色在右，逆时针</span></p></div><ol start=\"5\" class=\"ne-ol\"><li id=\"u4d92211e\"><span class=\"ne-text\">拼好顶层，</span><strong><span class=\"ne-text\" style=\"color: #DF2A3F\">注</span></strong><span class=\"ne-text\" style=\"color: #DF2A3F\">：</span><span class=\"ne-text\">要形成一面正确的，另三面顺时针或逆时针转</span></li></ol><div class=\"ne-quote\"><p id=\"u6829334b\" class=\"ne-p\"><span class=\"ne-text\">公式：Ｒ2Ｄ2Ｒ'Ｕ'ＲＤ2Ｒ'ＵＲ'</span></p><ol class=\"ne-ol\"><li id=\"uecb0a625\"><span class=\"ne-text\">逆时针时，正确的一面向前，小鱼１＋整体转180°＋小鱼２</span></li><li id=\"u315cfd5d\"><span class=\"ne-text\">顺时针时，正确的一面向右，小鱼２＋整体转180°＋小鱼１</span></li></ol></div><p id=\"130a5bc4c241589c9812cbaa02200c66\" class=\"ne-p\"><span class=\"ne-text\"> </span></p></div>",
+  "body": null,
+  "CosUpdatedAt": "0001-01-01T00:00:00",
+  "BodyHtmlCosUrl": null
+}

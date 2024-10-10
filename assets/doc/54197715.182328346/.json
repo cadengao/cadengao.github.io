@@ -1,0 +1,22 @@
+﻿{
+  "UUID": "54197715.182328346",
+  "id": 0,
+  "type": null,
+  "format": null,
+  "title": "Windbg的使用【Area】",
+  "tags": null,
+  "slug": null,
+  "Tags": null,
+  "description": null,
+  "cover": null,
+  "book_id": 0,
+  "BookName": null,
+  "public": 0,
+  "word_count": 0,
+  "created_at": "0001-01-01T00:00:00",
+  "updated_at": "0001-01-01T00:00:00",
+  "body_html": "<!doctype html><div class=\"lake-content\" typography=\"classic\"><ol class=\"ne-ol\"><li id=\"u314faeb4\" data-lake-index-type=\"0\"><span class=\"ne-text\">首先，需要在编译时启用调试信息（/Zi 或 /ZI）和禁用优化（/Od），以便生成可调试的程序。</span></li></ol><ol start=\"2\" class=\"ne-ol\"><li id=\"u759669ef\" data-lake-index-type=\"0\"><span class=\"ne-text\">打开Windbg，并在File菜单中选择Open Executable，选择被调试的可执行文件。</span></li></ol><ol start=\"3\" class=\"ne-ol\"><li id=\"u27e08423\" data-lake-index-type=\"0\"><span class=\"ne-text\">在Windbg中输入以下命令，启用符号路径：</span></li></ol><pre data-language=\"plain\" id=\"GoFeF\" class=\"ne-codeblock language-plain\"><code>.sympath SRV*C:\\\\Symbols*http://msdl.microsoft.com/download/symbols</code></pre><ol start=\"4\" class=\"ne-ol\"><li id=\"u9d7867b5\" data-lake-index-type=\"0\"><span class=\"ne-text\">输入以下命令，加载符号：</span></li></ol><pre data-language=\"plain\" id=\"CZLKw\" class=\"ne-codeblock language-plain\"><code>.reload /f</code></pre><ol start=\"5\" class=\"ne-ol\"><li id=\"uc07719b3\" data-lake-index-type=\"0\"><span class=\"ne-text\">设置断点，以便在程序执行到相应的代码位置时中断：</span></li></ol><pre data-language=\"plain\" id=\"ZnOVu\" class=\"ne-codeblock language-plain\"><code>bp [module]!function</code></pre><p id=\"ua4f914b9\" class=\"ne-p\"><span class=\"ne-text\">其中，[module]是目标模块的名称，function是目标函数的名称。</span></p><p id=\"uaeeebc2b\" class=\"ne-p\"><span class=\"ne-text\">例如，如果要在main函数中设置断点，则可以使用以下命令：</span></p><pre data-language=\"plain\" id=\"HVI3Y\" class=\"ne-codeblock language-plain\"><code>bp MyApp!main</code></pre><ol start=\"6\" class=\"ne-ol\"><li id=\"u7904fbf9\" data-lake-index-type=\"0\"><span class=\"ne-text\">启动程序：</span></li></ol><pre data-language=\"plain\" id=\"jl8to\" class=\"ne-codeblock language-plain\"><code>g</code></pre><ol start=\"7\" class=\"ne-ol\"><li id=\"u8eb1b21a\" data-lake-index-type=\"0\"><span class=\"ne-text\">当程序执行到断点处时，Windbg会中断程序的执行并显示调试信息。同时，可以输入以下命令来查看当前的堆栈信息：</span></li></ol><pre data-language=\"plain\" id=\"a4Kik\" class=\"ne-codeblock language-plain\"><code>kb</code></pre><ol start=\"8\" class=\"ne-ol\"><li id=\"u1e64b87e\" data-lake-index-type=\"0\"><span class=\"ne-text\">如果程序出现异常，则可以输入以下命令来查看异常信息：</span></li></ol><pre data-language=\"plain\" id=\"xGZIR\" class=\"ne-codeblock language-plain\"><code>!analyze -v</code></pre><p id=\"u7958e350\" class=\"ne-p\"><span class=\"ne-text\">该命令将显示异常的详细信息，包括异常类型、异常地址、异常源代码等。</span></p><ol start=\"9\" class=\"ne-ol\"><li id=\"uc4ff1f0c\" data-lake-index-type=\"0\"><span class=\"ne-text\">可以使用以下命令来查看当前寄存器的值：</span></li></ol><pre data-language=\"plain\" id=\"XXaP6\" class=\"ne-codeblock language-plain\"><code>r</code></pre><ol start=\"10\" class=\"ne-ol\"><li id=\"ua432fff1\" data-lake-index-type=\"0\"><span class=\"ne-text\">可以使用以下命令来查看指定内存地址的值：</span></li></ol><pre data-language=\"plain\" id=\"NqACo\" class=\"ne-codeblock language-plain\"><code>dd [address]</code></pre><p id=\"u4c4a1041\" class=\"ne-p\"><span class=\"ne-text\">其中，[address]是目标内存地址的十六进制表示。</span></p><ol start=\"11\" class=\"ne-ol\"><li id=\"uab952fe6\" data-lake-index-type=\"0\"><span class=\"ne-text\">可以使用以下命令来修改指定内存地址的值：</span></li></ol><pre data-language=\"plain\" id=\"aNnyo\" class=\"ne-codeblock language-plain\"><code>eb [address] [value]</code></pre><p id=\"u4ae7a4ee\" class=\"ne-p\"><span class=\"ne-text\">其中，[address]是目标内存地址的十六进制表示，[value]是要写入该内存地址的值。</span></p><ol start=\"12\" class=\"ne-ol\"><li id=\"u41003286\" data-lake-index-type=\"0\"><span class=\"ne-text\">可以使用以下命令来继续程序的执行：</span></li></ol><pre data-language=\"plain\" id=\"JBuw8\" class=\"ne-codeblock language-plain\"><code>g</code></pre><ol start=\"13\" class=\"ne-ol\"><li id=\"u2f10e488\" data-lake-index-type=\"0\"><span class=\"ne-text\">当程序再次中断时，可以重复上述步骤来查看和分析调试信息，以便定位和解决问题。</span></li></ol></div>",
+  "body": null,
+  "CosUpdatedAt": "0001-01-01T00:00:00",
+  "BodyHtmlCosUrl": null
+}
