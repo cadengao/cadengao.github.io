@@ -1,5 +1,6 @@
 Assets/custom/beian.png
 Assets/custom/favicon.ico
+Assets/custom/lake-content-v1.css
 Assets/custom/loading.gif
 Assets/custom/package/icon-128.png
 Assets/custom/package/icon-16.png
