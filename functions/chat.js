@@ -14,6 +14,8 @@ const connectionConfig = {
 const _token = process.env.WX_TOKEN; // 将Token设为环境变量
 
 exports.handler = async (event, context) => {
+	console.log('Received event:', JSON.stringify(event)); // Log the received event
+
 	// 处理 GET 请求
 	if (event.httpMethod === 'GET') {
 		const {
@@ -24,17 +26,15 @@ exports.handler = async (event, context) => {
 		} = event.queryStringParameters || {};
 
 		if (Check(signature, timestamp, nonce, _token)) {
-			// 返回随机字符串表示验证通过
 			return {
 				statusCode: 200,
 				headers: {
-					'Access-Control-Allow-Origin': '*', // 允许的来源
-					'Content-Type': 'text/plain' // 设置内容类型
+					'Access-Control-Allow-Origin': '*',
+					'Content-Type': 'text/plain'
 				},
 				body: echostr,
 			};
 		} else {
-			// 返回失败消息
 			return {
 				statusCode: 403,
 				headers: {
@@ -48,16 +48,33 @@ exports.handler = async (event, context) => {
 
 	// 处理 POST 请求
 	if (event.httpMethod === 'POST') {
+		console.log('Raw body:', event.body); // Log the raw request body
+
 		// 解析请求体
-		const requestBody = JSON.parse(event.body || '{}');
+		let requestBody;
+		try {
+			requestBody = JSON.parse(event.body || '{}');
+		} catch (error) {
+			console.error('Failed to parse JSON:', error);
+			return {
+				statusCode: 400,
+				headers: {
+					'Access-Control-Allow-Origin': '*',
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					message: 'Invalid JSON format.'
+				}),
+			};
+		}
 
 		// 检查请求体中的必需字段
 		if (!requestBody || !requestBody.Content || !requestBody.CreateTime || !requestBody.MsgType) {
 			return {
 				statusCode: 400,
 				headers: {
-					'Access-Control-Allow-Origin': '*', // 允许的来源
-					'Content-Type': 'application/json' // 设置内容类型
+					'Access-Control-Allow-Origin': '*',
+					'Content-Type': 'application/json'
 				},
 				body: JSON.stringify({
 					message: 'Content, CreateTime, and MsgType are required.'
@@ -89,24 +106,26 @@ exports.handler = async (event, context) => {
 			await connection.end();
 
 			// 返回成功响应
-			return {
+			const response = {
 				statusCode: 200,
 				headers: {
-					'Access-Control-Allow-Origin': '*', // 允许的来源
-					'Content-Type': 'application/json' // 设置内容类型
+					'Access-Control-Allow-Origin': '*',
+					'Content-Type': 'application/json'
 				},
 				body: JSON.stringify({
 					message: 'Record inserted successfully.',
 					id: result.insertId
 				}),
 			};
+			console.log('Response:', response); // Log the response
+			return response;
 		} catch (error) {
 			console.error('Database insert error:', error);
 			return {
 				statusCode: 500,
 				headers: {
-					'Access-Control-Allow-Origin': '*', // 允许的来源
-					'Content-Type': 'application/json' // 设置内容类型
+					'Access-Control-Allow-Origin': '*',
+					'Content-Type': 'application/json'
 				},
 				body: JSON.stringify({
 					message: 'Internal Server Error',
@@ -120,8 +139,8 @@ exports.handler = async (event, context) => {
 	return {
 		statusCode: 405,
 		headers: {
-			'Access-Control-Allow-Origin': '*', // 允许的来源
-			'Content-Type': 'application/json' // 设置内容类型
+			'Access-Control-Allow-Origin': '*',
+			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify({
 			message: 'Method not allowed.'
