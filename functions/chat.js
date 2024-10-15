@@ -1,5 +1,6 @@
 const mysql = require('mysql2/promise');
 const crypto = require('crypto');
+const xml2js = require('xml2js');
 
 // 获取数据库连接配置
 const connectionConfig = {
@@ -50,12 +51,14 @@ exports.handler = async (event, context) => {
 	if (event.httpMethod === 'POST') {
 		console.log('Raw body:', event.body); // Log the raw request body
 
-		// 解析请求体
+		// 解析 XML 请求体
 		let requestBody;
 		try {
-			requestBody = JSON.parse(event.body || '{}');
+			// 使用 xml2js 解析 XML
+			const parser = new xml2js.Parser();
+			requestBody = await parser.parseStringPromise(event.body);
 		} catch (error) {
-			console.error('Failed to parse JSON:', error);
+			console.error('Failed to parse XML:', error);
 			return {
 				statusCode: 400,
 				headers: {
@@ -63,13 +66,18 @@ exports.handler = async (event, context) => {
 					'Content-Type': 'application/json'
 				},
 				body: JSON.stringify({
-					message: 'Invalid JSON format.'
+					message: 'Invalid XML format.'
 				}),
 			};
 		}
 
 		// 检查请求体中的必需字段
-		if (!requestBody || !requestBody.Content || !requestBody.CreateTime || !requestBody.MsgType) {
+		const {
+			Content,
+			CreateTime,
+			MsgType
+		} = requestBody.xml;
+		if (!Content || !CreateTime || !MsgType) {
 			return {
 				statusCode: 400,
 				headers: {
@@ -82,12 +90,6 @@ exports.handler = async (event, context) => {
 			};
 		}
 
-		const {
-			Content,
-			CreateTime,
-			MsgType
-		} = requestBody;
-
 		// 转换时间戳为日期
 		const dateTime = new Date(CreateTime * 1000); // CreateTime 是 Unix 时间戳
 
@@ -97,7 +99,7 @@ exports.handler = async (event, context) => {
 
 			// 插入记录的 SQL 语句
 			const sql = 'INSERT INTO tb_wxchatrecords (Content, CreateTime, MsgType) VALUES (?, ?, ?)';
-			const params = [Content, dateTime, MsgType];
+			const params = [Content[0], dateTime, MsgType[0]]; // XML 字段通常是数组
 
 			// 执行插入操作
 			const [result] = await connection.execute(sql, params);
@@ -134,7 +136,6 @@ exports.handler = async (event, context) => {
 			};
 		}
 	}
-
 	// 返回方法不允许的错误
 	return {
 		statusCode: 405,
