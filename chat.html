@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>记录</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        #loading {
+            display: none; /* 默认隐藏加载图片 */
+            text-align: center;
+            margin: 100px auto;
+        }
+        .record {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .content {
+            color: #28a745;
+            font-size: 16px;
+            flex: 1;
+        }
+        .createTime {
+            color: #6c757d;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        .copy-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .copy-button:hover {
+            background-color: #0056b3;
+        }
+        .toast {
+            display: none; /* 默认隐藏提示框 */
+            position: fixed;
+            top: 80px; /* 修改为距离顶部80px，以避免遮挡标题 */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            transition: opacity 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <h1>记录</h1>
+    <div id="toast" class="toast">已复制内容！</div> <!-- 将提示框移动到标题下面 -->
+    <div id="content"></div>
+    <div id="loading">
+        <img src="package/Assets/custom/loading.gif" alt="加载中...">
+    </div>
+
+    <script>
+        const url = 'https://api.cadengao.com/.netlify/functions/mysql?sql=SELECT Content, CreateTime FROM tb_wxchatrecords WHERE MsgType = 0 ORDER BY CreateTime ASC LIMIT 10';
+        const loadingElement = document.getElementById('loading');
+        const contentDiv = document.getElementById('content');
+        const toast = document.getElementById('toast');
+        
+        // 显示加载图片
+        loadingElement.style.display = 'block';
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应不是 OK');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // 数据按时间降序排列，以确保最新的记录显示在最后
+                data.sort((a, b) => new Date(a.CreateTime) - new Date(b.CreateTime));
+
+                data.forEach(record => {
+                    const recordDiv = document.createElement('div');
+                    recordDiv.className = 'record';
+                    const formattedDate = new Date(record.CreateTime).toLocaleString('zh-CN', {
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit',
+                        hour12: false
+                    }).replace(/\//g, '-');
+
+                    // 创建复制按钮
+                    const copyButton = document.createElement('button');
+                    copyButton.className = 'copy-button';
+                    copyButton.innerText = '复制';
+                    copyButton.onclick = () => {
+                        navigator.clipboard.writeText(record.Content).then(() => {
+                            showToast('已复制内容！');
+                        }).catch(err => {
+                            console.error('复制失败:', err);
+                        });
+                    };
+
+                    recordDiv.innerHTML = `
+                        <div class="content">${record.Content}</div>
+                        <div class="createTime">${formattedDate}</div>
+                    `;
+                    recordDiv.appendChild(copyButton);
+                    contentDiv.appendChild(recordDiv);
+                });
+            })
+            .catch(error => {
+                console.error('读取数据时出错:', error);
+                contentDiv.innerText = '读取数据失败';
+            })
+            .finally(() => {
+                // 隐藏加载图片
+                loadingElement.style.display = 'none';
+            });
+
+        // 显示提示框
+        function showToast(message) {
+            toast.innerText = message;
+            toast.style.display = 'block';
+            toast.style.opacity = 1;
+
+            // 设定自动消失
+            setTimeout(() => {
+                toast.style.opacity = 0;
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                }, 500); // 等待消失动画完成后再隐藏
+            }, 2000); // 2秒后自动消失
+        }
+    </script>
+</body>
+</html>
