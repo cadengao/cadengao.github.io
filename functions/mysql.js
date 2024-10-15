@@ -29,7 +29,7 @@ exports.handler = async (event, context) => {
     try {
         // 创建数据库连接
         const connection = await mysql.createConnection(connectionConfig);
-        
+        console.log('sql:', sql); 
         // 执行查询
         const [rows] = await connection.execute(sql);
 

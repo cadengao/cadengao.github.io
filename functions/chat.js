@@ -15,7 +15,7 @@ const connectionConfig = {
 const _token = process.env.WX_TOKEN; // 将Token设为环境变量
 
 exports.handler = async (event, context) => {
-	console.log('Received event:', JSON.stringify(event)); // Log the received event
+	//console.log('Received event:', JSON.stringify(event)); // Log the received event
 
 	// 处理 GET 请求
 	if (event.httpMethod === 'GET') {
@@ -49,7 +49,7 @@ exports.handler = async (event, context) => {
 
 	// 处理 POST 请求
 	if (event.httpMethod === 'POST') {
-		console.log('Raw body:', event.body); // Log the raw request body
+		//console.log('Raw body:', event.body); // Log the raw request body
 
 		// 解析 XML 请求体
 		let requestBody;
@@ -119,7 +119,7 @@ exports.handler = async (event, context) => {
 					id: result.insertId
 				}),
 			};
-			console.log('Response:', response); // Log the response
+			//console.log('Response:', response); // Log the response
 			return response;
 		} catch (error) {
 			console.error('Database insert error:', error);
