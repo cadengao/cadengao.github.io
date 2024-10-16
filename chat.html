@@ -77,7 +77,7 @@
     </div>
 
     <script>
-        const url = "https://api.cadengao.com/.netlify/functions/mysql?sql=SELECT Content, CreateTime FROM tb_wxchatrecords WHERE MsgType = 'text' ORDER BY CreateTime ASC LIMIT 10";
+        const url = "https://sqlapi.cadengao.com/.netlify/functions/mysql?sql=SELECT Content, CreateTime FROM tb_wxchatrecords WHERE MsgType = 'text' ORDER BY CreateTime ASC LIMIT 10";
         const loadingElement = document.getElementById('loading');
         const contentDiv = document.getElementById('content');
         const toast = document.getElementById('toast');
