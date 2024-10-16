@@ -66,6 +66,11 @@
             z-index: 1000;
             transition: opacity 0.5s;
         }
+        .no-records {
+            text-align: center;
+            color: #6c757d;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -93,41 +98,46 @@
                 return response.json();
             })
             .then(data => {
-                // 数据按时间降序排列，以确保最新的记录显示在最后
-                data.sort((a, b) => new Date(a.CreateTime) - new Date(b.CreateTime));
-
-                data.forEach(record => {
-                    const recordDiv = document.createElement('div');
-                    recordDiv.className = 'record';
-                    const formattedDate = new Date(record.CreateTime).toLocaleString('zh-CN', {
-                        year: 'numeric',
-                        month: '2-digit',
-                        day: '2-digit',
-                        hour: '2-digit',
-                        minute: '2-digit',
-                        second: '2-digit',
-                        hour12: false
-                    }).replace(/\//g, '-');
-
-                    // 创建复制按钮
-                    const copyButton = document.createElement('button');
-                    copyButton.className = 'copy-button';
-                    copyButton.innerText = '复制';
-                    copyButton.onclick = () => {
-                        navigator.clipboard.writeText(record.Content).then(() => {
-                            showToast('已复制内容！');
-                        }).catch(err => {
-                            console.error('复制失败:', err);
-                        });
-                    };
-
-                    recordDiv.innerHTML = `
-                        <div class="content">${record.Content}</div>
-                        <div class="createTime">${formattedDate}</div>
-                    `;
-                    recordDiv.appendChild(copyButton);
-                    contentDiv.appendChild(recordDiv);
-                });
+                // 如果没有记录，显示"没有记录"提示
+                if (data.length === 0) {
+                    const noRecordsDiv = document.createElement('div');
+                    noRecordsDiv.className = 'no-records';
+                    noRecordsDiv.textContent = '没有记录';
+                    contentDiv.appendChild(noRecordsDiv);
+                } else {
+                    // 数据按时间降序排列，以确保最新的记录显示在最后
+                    data.sort((a, b) => new Date(a.CreateTime) - new Date(b.CreateTime));
+                    data.forEach(record => {
+                        const recordDiv = document.createElement('div');
+                        recordDiv.className = 'record';
+                        const formattedDate = new Date(record.CreateTime).toLocaleString('zh-CN', {
+                            year: 'numeric',
+                            month: '2-digit',
+                            day: '2-digit',
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            second: '2-digit',
+                            hour12: false
+                        }).replace(/\//g, '-');
+                        // 创建复制按钮
+                        const copyButton = document.createElement('button');
+                        copyButton.className = 'copy-button';
+                        copyButton.innerText = '复制';
+                        copyButton.onclick = () => {
+                            navigator.clipboard.writeText(record.Content).then(() => {
+                                showToast('已复制内容！');
+                            }).catch(err => {
+                                console.error('复制失败:', err);
+                            });
+                        };
+                        recordDiv.innerHTML = `
+                            <div class="content">${record.Content}</div>
+                            <div class="createTime">${formattedDate}</div>
+                        `;
+                        recordDiv.appendChild(copyButton);
+                        contentDiv.appendChild(recordDiv);
+                    });
+                }
             })
             .catch(error => {
                 console.error('读取数据时出错:', error);
