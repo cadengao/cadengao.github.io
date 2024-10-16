@@ -13,6 +13,7 @@ const connectionConfig = {
 };
 
 const _token = process.env.WX_TOKEN; // 将Token设为环境变量
+const _clear_flag = process.env.CLEAR_FLAG; // 将CLEAR_FLAG设为环境变量
 
 exports.handler = async (event, context) => {
 	//console.log('Received event:', JSON.stringify(event)); // Log the received event
@@ -77,6 +78,7 @@ exports.handler = async (event, context) => {
 			CreateTime,
 			MsgType
 		} = requestBody.xml;
+
 		if (!Content || !CreateTime || !MsgType) {
 			return {
 				statusCode: 400,
@@ -97,32 +99,53 @@ exports.handler = async (event, context) => {
 			// 创建数据库连接
 			const connection = await mysql.createConnection(connectionConfig);
 
-			// 插入记录的 SQL 语句
-			const sql = 'INSERT INTO tb_wxchatrecords (Content, CreateTime, MsgType) VALUES (?, ?, ?)';
-			const params = [Content[0], dateTime, MsgType[0]]; // XML 字段通常是数组
+			// 检查 Content 值
+			if (Content[0] === _clear_flag) {
+				// 删除记录的 SQL 语句
+				const deleteSql = 'DELETE FROM tb_wxchatrecords';
+				await connection.execute(deleteSql);
+				// 关闭连接
+				await connection.end();
+				console.log('已清空表tb_wxchatrecords'); 
+				// 返回成功响应
+				return {
+					statusCode: 200,
+					headers: {
+						'Access-Control-Allow-Origin': '*',
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						message: 'All records deleted successfully.'
+					}),
+				};
+			} else {
+				// 插入记录的 SQL 语句
+				const sql = 'INSERT INTO tb_wxchatrecords (Content, CreateTime, MsgType) VALUES (?, ?, ?)';
+				const params = [Content[0], dateTime, MsgType[0]]; // XML 字段通常是数组
 
-			// 执行插入操作
-			const [result] = await connection.execute(sql, params);
+				// 执行插入操作
+				const [result] = await connection.execute(sql, params);
 
-			// 关闭连接
-			await connection.end();
+				// 关闭连接
+				await connection.end();
 
-			// 返回成功响应
-			const response = {
-				statusCode: 200,
-				headers: {
-					'Access-Control-Allow-Origin': '*',
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({
-					message: 'Record inserted successfully.',
-					id: result.insertId
-				}),
-			};
-			//console.log('Response:', response); // Log the response
-			return response;
+				// 返回成功响应
+				const response = {
+					statusCode: 200,
+					headers: {
+						'Access-Control-Allow-Origin': '*',
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						message: 'Record inserted successfully.',
+						id: result.insertId
+					}),
+				};
+				//console.log('Response:', response); // Log the response
+				return response;
+			}
 		} catch (error) {
-			console.error('Database insert error:', error);
+			console.error('Database operation error:', error);
 			return {
 				statusCode: 500,
 				headers: {
