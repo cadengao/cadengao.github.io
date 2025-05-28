@@ -1,0 +1,13 @@
+﻿{
+  "uuid": "54197723.182340826",
+  "id": 182340826,
+  "title": "scrcpy-Android投屏【Resource】",
+  "cover": "https://cdn.nlark.com/yuque/0/2024/tif/123299/1723701937664-b449e51e-37a4-4720-80fc-e02cf457d74a.tif",
+  "book_id": 54197723,
+  "book_name": "Resource",
+  "public": 0,
+  "word_count": 169,
+  "created_at": "2024-08-15T06:05:23",
+  "updated_at": "2024-08-17T03:32:30",
+  "body_html": "<!doctype html><div class=\"lake-content\" typography=\"classic\"><h1 id=\"61a3ec66\"><span class=\"ne-text\">介绍</span></h1><p id=\"uca4f5b6b\" class=\"ne-p\"><span class=\"ne-text\">scrcpy就是通过adb调试的方式来将手机屏幕投到电脑上，并可以通过电脑控制您的Android设备。它可以通过USB连接，也可以通过Wifi连接（类似于隔空投屏），而且不需要任何root权限，不需要在手机里安装任何程序。scrcpy同时适用于GNU / Linux，Windows和macOS。</span></p><h1 id=\"e655a410\"><span class=\"ne-text\">安装</span></h1><ol class=\"ne-ol\"><li id=\"ua705dbec\" data-lake-index-type=\"0\"><span class=\"ne-text\">Windows下载链接</span><a href=\"https://github.com/Genymobile/scrcpy/releases/download/v2.1/scrcpy-win64-v2.1.zip\" data-href=\"https://github.com/Genymobile/scrcpy/releases/download/v2.1/scrcpy-win64-v2.1.zip\" target=\"_blank\" class=\"ne-link\"><span class=\"ne-text\">https://github.com/Genymobile/scrcpy/releases/download/v2.1/scrcpy-win64-v2.1.zip</span></a><img src=\"https://file.cadengao.com/assets/doc/54197723.182340826/image/0.png\" width=\"867\" id=\"ua41686e4\" class=\"ne-image\"></li><li id=\"u81982a30\" data-lake-index-type=\"0\"><span class=\"ne-text\">Mac安装步骤：</span></li></ol><pre data-language=\"plain\" id=\"YukYK\" class=\"ne-codeblock language-plain\"><code>brew install scrcpy\nbrew install android-platform-tools</code></pre><h1 id=\"ecff77a8\"><span class=\"ne-text\">使用</span></h1><p id=\"ud4334827\" class=\"ne-p\"><span class=\"ne-text\">连接设备：</span></p><pre data-language=\"plain\" id=\"WZvEB\" class=\"ne-codeblock language-plain\"><code>adb connect ip</code></pre><p id=\"ua7edc4b7\" class=\"ne-p\"><span class=\"ne-text\">断开连接设备：</span></p><pre data-language=\"plain\" id=\"dET1U\" class=\"ne-codeblock language-plain\"><code>adb disconnect ip</code></pre><p id=\"ucee14033\" class=\"ne-p\"><span class=\"ne-text\">查看连接设备：</span></p><pre data-language=\"plain\" id=\"k69Rq\" class=\"ne-codeblock language-plain\"><code>adb devices</code></pre><p id=\"uc46f00bc\" class=\"ne-p\"><span class=\"ne-text\">投屏（Windows）：</span></p><pre data-language=\"plain\" id=\"JVM9O\" class=\"ne-codeblock language-plain\"><code>scrcpy.exe</code></pre><p id=\"ueb90cb93\" class=\"ne-p\"><span class=\"ne-text\">投屏（Mac）：</span></p><pre data-language=\"plain\" id=\"DWNy8\" class=\"ne-codeblock language-plain\"><code>scrcpy</code></pre></div>"
+}

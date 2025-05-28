@@ -1,0 +1,13 @@
+﻿{
+  "uuid": "54197723.183049799",
+  "id": 183049799,
+  "title": "windows部署hexo【Resource】",
+  "cover": "https://cdn.nlark.com/yuque/0/2024/png/123299/1724138925132-43489ab0-40f0-475b-9289-42b6c60ac4ae.png",
+  "book_id": 54197723,
+  "book_name": "Resource",
+  "public": 0,
+  "word_count": 114,
+  "created_at": "2024-08-20T07:23:49",
+  "updated_at": "2024-10-22T08:06:32",
+  "body_html": "<!doctype html><div class=\"lake-content\" typography=\"classic\"><ol class=\"ne-ol\"><li id=\"u5f3957eb\" data-lake-index-type=\"0\"><span class=\"ne-text\">下载并安装node.js，官网地址：</span><a href=\"https://nodejs.org/zh-cn\" data-href=\"https://nodejs.org/zh-cn\" target=\"_blank\" class=\"ne-link\"><span class=\"ne-text\">Node.js — 在任何地方运行 JavaScript (nodejs.org)</span></a></li></ol><p id=\"u22a8a5f4\" class=\"ne-p\" style=\"text-indent: 2em; margin-left: 2em\"><img src=\"https://file.cadengao.com/assets/doc/54197723.183049799/image/0.png\" width=\"1697.3333333333333\" id=\"u748b8125\" class=\"ne-image\"></p><p id=\"ub5568dfa\" class=\"ne-p\" style=\"text-indent: 2em\"><img src=\"https://file.cadengao.com/assets/doc/54197723.183049799/image/1.png\" width=\"622.6666666666666\" id=\"uf383f82e\" class=\"ne-image\"></p><ol start=\"2\" class=\"ne-ol\"><li id=\"u1f36b428\" data-lake-index-type=\"0\"><span class=\"ne-text\">下载并安装git，官网地址：</span><a href=\"https://git-scm.com/downloads\" data-href=\"https://git-scm.com/downloads\" target=\"_blank\" class=\"ne-link\"><span class=\"ne-text\">Git - Downloads (git-scm.com)</span></a></li><li id=\"ua8cbc460\" data-lake-index-type=\"0\"><span class=\"ne-text\">用管理员打开cmd，执行</span></li></ol><span style=\"margin-left: 2em\"><pre data-language=\"csharp\" id=\"GPm5S\" class=\"ne-codeblock language-csharp\"><code>//1.检查node-v是否安装成功，成功后会提示v20.16.0\nnode -v\n//2.安装cnpm -g就是全局安装\nnpm install -g cnpm --registry=https://registry.npmmirror.com  # -g就是全局安装\n//3.安装hexo\ncnpm install -g hexo-cli\n//4.检查hexo是否安装成功\nhexo -v</code></pre></span></div>"
+}
