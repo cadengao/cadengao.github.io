@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <script defer="defer" src="/craft/js/vendors~main.533c931f.js"></script>
+    <script defer="defer" src="/craft/js/main.063840fd.js"></script>
+    <link href="/craft/css/vendors~main.c3800cce.css" rel="stylesheet">
+    <link href="/craft/css/main.0e2f5845.css" rel="stylesheet">
+    <!-- 其他 meta 标签保持不变 -->
+    <meta name="luki:api-endpoint" content="https://cadengao.craft.me/api">
+    <meta name="luki:override-static-asset-root" content="https://www.craft.do">
+    <title>小高的知识库</title>
+</head>
+<body>
+    <style>
+        /* 隐藏分隔线 */
+        div#topContainer .right-area .separator {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            width: 0 !important;
+            height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* 隐藏 Craft 图标链接 */
+        div#topContainer .right-area a[href*="craft.do"] {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            width: 0 !important;
+            height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            font-size: 0 !important;
+            line-height: 0 !important;
+        }
+        /*标题样式-开始*/
+        .lake-content h1,
+        .lake-content h2,
+        .lake-content h3 {
+            position: relative;
+        }
+
+            .lake-content h1:after,
+            .lake-content h2:after,
+            .lake-content h3:after {
+                content: "";
+                display: block;
+                position: absolute;
+                background: #109d58;
+                opacity: 0.25;
+                pointer-events: none;
+                border-radius: 15px;
+                left: -2px;
+                bottom: 0px;
+            }
+
+            .lake-content h1:after {
+                width: 45px;
+                height: 13px;
+            }
+
+            .lake-content h2:after {
+                width: 40px;
+                height: 11px;
+            }
+
+            .lake-content h3:after {
+                width: 30px;
+                height: 9px;
+            }
+
+            .lake-content h1.text-center:after,
+            .lake-content h1[style*="text-align: center"]:after,
+            .lake-content h1[style*="text-align:center"]:after,
+            .lake-content h1[class*="text-align-center"]:after,
+            .lake-content h2.text-center:after,
+            .lake-content h2[style*="text-align: center"]:after,
+            .lake-content h2[style*="text-align:center"]:after,
+            .lake-content h2[class*="text-align-center"]:after,
+            .lake-content h3.text-center:after,
+            .lake-content h3[style*="text-align: center"]:after,
+            .lake-content h3[style*="text-align:center"]:after,
+            .lake-content h3[class*="text-align-center"]:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .lake-content h1.text-right:after,
+            .lake-content h1[style*="text-align: right"]:after,
+            .lake-content h1[style*="text-align:right"]:after,
+            .lake-content h1[class*="text-align-right"]:after,
+            .lake-content h2.text-right:after,
+            .lake-content h2[style*="text-align: right"]:after,
+            .lake-content h2[style*="text-align:right"]:after,
+            .lake-content h2[class*="text-align-right"]:after,
+            .lake-content h3.text-right:after,
+            .lake-content h3[style*="text-align: right"]:after,
+            .lake-content h3[style*="text-align:right"]:after,
+            .lake-content h3[class*="text-align-right"]:after {
+                left: unset;
+                right: -2px;
+            }
+
+
+
+        .lake-content .no-results header h1:after {
+            display: none !important;
+        }
+        /*标题样式-结束*/
+
+        @media only screen and (max-width:768px) {
+            .lake-columns {
+                display: block !important
+            }
+
+            .lake-column-item {
+                margin-right: 0 !important
+            }
+        }
+    </style>
+    <div class="lake-content" style="position:relative;margin:0;height:100%;overflow:auto">
+        <div id="root" style="height:100%"></div>
+    </div>
+
+    <script>
+        // 1. 从 URL 路径提取 share-id
+        const urlParams = new URLSearchParams(window.location.search);
+        const shareId = urlParams.get('shareid') || "2kT9lQ2iHq9qZK"; // 默认值
+
+        // 2. 动态插入 meta 标签
+        const metaShareId = document.createElement('meta');
+        metaShareId.name = 'luki:share-id';
+        metaShareId.content = shareId;
+        document.head.appendChild(metaShareId);
+
+        console.log("动态设置的 share-id:", shareId); // 调试用
+    </script>
+</body>
+</html>
