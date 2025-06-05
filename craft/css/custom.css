@@ -53,6 +53,18 @@ div.isOpen {
 
 }
 
+/*文章跳转loading*/
+.loading-animation-container {
+    background-color: #E1F0E8;
+    background-image: url(/loading.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    .loading-animation-container div {
+        display: none;
+    }
+
 /*标题样式-开始*/
 .lake-content h1,
 .lake-content h2,
