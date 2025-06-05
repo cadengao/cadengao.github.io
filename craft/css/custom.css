@@ -1,5 +1,4 @@
 body {
-
 }
 
 /* 隐藏分隔线 */
@@ -29,28 +28,30 @@ div#topContainer .right-area a[href*="craft.do"] {
 
 
 /*隐藏侧栏 Craft 图标链接*/
-div.isOpen a.group{
+div.isOpen a.group {
     display: none !important;
 }
+
 div#topContainer {
     margin-top: 70px;
 }
+
 div.isOpen {
     margin-top: 70px;
 }
+
 div:has(>#pageOverlayAccessory) {
     margin-top: 50px;
 }
+
 div:has(> div > #pageOverlayAccessory) {
     max-width: 1000px;
 }
 /* 只在桌面设备应用这些样式 */
 @media (min-width: 768px) {
-
 }
 /* 只在移动设备应用这些样式 */
 @media (max-width: 768px) {
-
 }
 
 /*文章跳转loading*/
@@ -145,9 +146,9 @@ div:has(> div > #pageOverlayAccessory) {
 }
 
     .lake-content div[id^="header-"] h1 {
-        font-size:xx-large;
-        color:#109d58;
-        font-weight:bolder;
+        font-size: xx-large;
+        color: #109d58;
+        font-weight: bolder;
     }
 
         .lake-content div[id^="header-"] h1:after {
@@ -164,5 +165,3 @@ div:has(> div > #pageOverlayAccessory) {
         margin-right: 0 !important
     }
 }
-
-
