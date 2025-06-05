@@ -146,6 +146,8 @@ div:has(> div > #pageOverlayAccessory) {
 
     .lake-content div[id^="header-"] h1 {
         font-size:xx-large;
+        color:#109d58;
+        font-weight:bolder;
     }
 
         .lake-content div[id^="header-"] h1:after {
