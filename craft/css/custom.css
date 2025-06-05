@@ -38,15 +38,15 @@ div#topContainer {
 div.isOpen {
     margin-top: 70px;
 }
+div:has(>#pageOverlayAccessory) {
+    margin-top: 50px;
+}
+div:has(> div > #pageOverlayAccessory) {
+    max-width: 1000px;
+}
 /* 只在桌面设备应用这些样式 */
 @media (min-width: 768px) {
-    div:has(>#pageOverlayAccessory) {
-        margin-top: 50px;
-    }
 
-    div:has(> div > #pageOverlayAccessory) {
-        max-width: 1000px;
-    }
 }
 /* 只在移动设备应用这些样式 */
 @media (max-width: 768px) {
@@ -145,6 +145,7 @@ div.isOpen {
 }
 
     .lake-content div[id^="header-"] h1 {
+        font-size:xx-large;
     }
 
         .lake-content div[id^="header-"] h1:after {
