@@ -67,6 +67,15 @@
         metaShareId.name = 'luki:share-id';
         metaShareId.content = shareId;
         document.head.appendChild(metaShareId);
+
+        // 3. 动态插入 password-protected 标签
+        const passwordProtected = urlParams.get('protected') || 'false'; // 默认值
+        if (passwordProtected==='true') {
+            const metaPasswordProtected = document.createElement('meta');
+            metaPasswordProtected.name = 'luki:password-protected';
+            metaPasswordProtected.content = 'true';
+            document.head.appendChild(metaPasswordProtected);
+        }
     </script>
     <script type="text/javascript" size="120" alpha='0.6' zIndex="-1" src="/ribbon.min.js"></script>
 </body>
