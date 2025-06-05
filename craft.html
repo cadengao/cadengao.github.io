@@ -3,6 +3,42 @@
 <head>
     <meta charset="utf-8">
     <link rel="icon" href="/favicon.ico">
+
+    <!--other-->
+    <link rel="preload" href="/loading.svg" as="image">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.loli.net">
+    <link href="https://fonts.loli.net/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="/craft/css/fontdef.r-11-gd9b659d.css" rel="stylesheet">
+    <link href="/craft/css/fontdef.r-24-g083f5a5.css" rel="stylesheet">
+    <script type="text/javascript">
+        if (window.location.hostname.endsWith("craft.do")) {
+            var MTIProjectId = "a3d3f738-d2f0-4742-a66a-c317be8eed82";
+            !function () {
+                var e = document.createElement("script");
+                e.type = "text/javascript",
+                    e.async = "true",
+                    e.src = "/share/static/fonts/mtiFontTrackingCode.js",
+                    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(e)
+            }()
+        }
+    </script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
+    <link rel="manifest" href="/craft/site.webmanifest">
+    <link media="(prefers-color-scheme: dark)" rel="icon" type="image/x-icon" sizes="32x32" href="/favicon.ico">
+    <link media="(prefers-color-scheme: dark)" rel="icon" type="image/x-icon" sizes="16x16" href="/favicon.ico">
+    <link media="(prefers-color-scheme: dark)" rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link media="(prefers-color-scheme: dark)" rel="mask-icon" href="/loading.svg" color="#ffffff">
+    <link media="(prefers-color-scheme: light)" rel="icon" type="image/x-icon" sizes="32x32" href="/favicon.ico">
+    <link media="(prefers-color-scheme: light)" rel="icon" type="image/x-icon" sizes="16x16" href="/favicon.ico">
+    <link media="(prefers-color-scheme: light)" rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link media="(prefers-color-scheme: light)" rel="mask-icon" href="/loading.svg" color="#120652">
+    <meta name="theme-color" content="#000000">
+    <meta name="luki:app-version" content="share-v3.1.2">
+    <meta name="luki:pl-domain-path" content="/s">
+    <meta name="luki:custom-domain" content="true">
+    <!--***-->
     <script defer="defer" src="/craft/js/vendors~main.533c931f.js"></script>
     <script defer="defer" src="/craft/js/main.063840fd.js"></script>
     <link href="/craft/css/vendors~main.c3800cce.css" rel="stylesheet">
@@ -11,12 +47,16 @@
     <!-- 其他 meta 标签保持不变 -->
     <meta name="luki:api-endpoint" content="https://cadengao.craft.me/api">
     <meta name="luki:override-static-asset-root" content="https://www.craft.do">
+
+    <!--***-->
+    <meta name="luki:disable-fs" content="fs-object-links,fs-show-author,fs-show-watermark,fs-show-duplicate-as-template,fs-email-share,fs-login,fs-open-in-app,fs-download-pdf">
+    <meta name="luki:enable-fs" content="fs-add-comment,fs-view-comment,fs-show-title,fs-enable-column-view">
     <title>小高的知识库</title>
 </head>
 <body>
     <div>
-        <header style="position:relative; padding-left: 10px; height: 70px; background-color: #3CB371; display: flex; align-items: center; justify-content: space-between;z-index:9999">
-            <a href="/#/craft" class="header-logo-container" style="display: flex; flex-direction: row; align-items: center; cursor: pointer;">
+        <header style="position:fixed;width:100%; padding-left: 10px; height: 70px; background-color: #3CB371; display: flex; align-items: center; justify-content: space-between;z-index:9999">
+            <a href="/" class="header-logo-container" style="display: flex; flex-direction: row; align-items: center; cursor: pointer;">
                 <img src="/favicon.ico" style="height: 32px; width: 32px;">
                 <p style="color: white; font-size: 28px; font-weight: bold; margin-left: 10px; white-space: nowrap;">
                     小高的知识库
@@ -39,8 +79,6 @@
         metaShareId.name = 'luki:share-id';
         metaShareId.content = shareId;
         document.head.appendChild(metaShareId);
-
-        console.log("动态设置的 share-id:", shareId); // 调试用
     </script>
 </body>
 </html>

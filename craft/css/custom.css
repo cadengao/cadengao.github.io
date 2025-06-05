@@ -26,20 +26,31 @@ div#topContainer .right-area a[href*="craft.do"] {
     line-height: 0 !important;
 }
 
+
+
 /*隐藏侧栏 Craft 图标链接*/
-div.isOpen{
-    margin-top:70px;
-}
 div.isOpen a.group{
     display: none !important;
 }
-
-div:has(>#pageOverlayAccessory) {
-    margin-top: 50px;
+div#topContainer {
+    margin-top: 70px;
 }
+div.isOpen {
+    margin-top: 70px;
+}
+/* 只在桌面设备应用这些样式 */
+@media (min-width: 768px) {
+    div:has(>#pageOverlayAccessory) {
+        margin-top: 50px;
+    }
 
-div:has(> div > #pageOverlayAccessory) {
-    max-width:1000px;
+    div:has(> div > #pageOverlayAccessory) {
+        max-width: 1000px;
+    }
+}
+/* 只在移动设备应用这些样式 */
+@media (max-width: 768px) {
+
 }
 
 /*标题样式-开始*/
