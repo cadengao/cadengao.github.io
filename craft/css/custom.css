@@ -27,11 +27,20 @@ div#topContainer .right-area a[href*="craft.do"] {
 }
 
 /*隐藏侧栏 Craft 图标链接*/
+div.isOpen{
+    margin-top:70px;
+}
 div.isOpen a.group{
     display: none !important;
 }
 
+div:has(>#pageOverlayAccessory) {
+    margin-top: 50px;
+}
 
+div:has(> div > #pageOverlayAccessory) {
+    max-width:1000px;
+}
 
 /*标题样式-开始*/
 .lake-content h1,
