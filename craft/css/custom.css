@@ -7,6 +7,7 @@
 div#topContainer .right-area .separator {
     display: none !important;
 }
+
 div#topContainer .right-area a[href*="craft.do"] {
     display: none !important;
 }
@@ -30,39 +31,38 @@ div:has(> div > #pageOverlayAccessory) {
     div:has(>#pageOverlayAccessory) {
         margin-top: 10px;
     }
+
     div#topContainer {
         visibility: collapse;
+        margin-left: 210px
     }
 
         div#topContainer * {
             color: white;
-            justify-self: end;
             top: 6px;
         }
 
     #topContainer button {
         visibility: visible;
-        right: -220px;
     }
 
     div#topContainer .right-area {
         background-color: #3CB371;
         visibility: visible;
-        right: 240px;
-        top: 0;
-        position: absolute;
+        right: 210px;
+        position: fixed;
     }
 
         div#topContainer .right-area > button:first-child {
             display: none !important;
         }
-
 }
 /* 只在移动设备应用这些样式 */
 @media (max-width: 768px) {
     div#topContainer {
-        margin-top:70px;
+        margin-top: 70px;
     }
+
     div:has(>#pageOverlayAccessory) {
         margin-top: 50px;
     }
