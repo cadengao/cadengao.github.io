@@ -33,13 +33,13 @@ div:has(> div > #pageOverlayAccessory) {
     }
 
     div#topContainer {
-        visibility: collapse;
-        margin-left: 210px
+        margin-left: 220px;
+        margin-top: 12px;
     }
 
         div#topContainer * {
             color: white;
-            top: 6px;
+            background: #3CB371;
         }
 
     #topContainer button {
@@ -47,9 +47,8 @@ div:has(> div > #pageOverlayAccessory) {
     }
 
     div#topContainer .right-area {
-        background-color: #3CB371;
         visibility: visible;
-        right: 210px;
+        right: 220px;
         position: fixed;
     }
 
