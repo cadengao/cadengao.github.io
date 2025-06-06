@@ -1,7 +1,7 @@
-body {
+ï»¿body {
 }
 
-/* Òþ²Ø·Ö¸ôÏß */
+/* éšè—åˆ†éš”çº¿ */
 div#topContainer .right-area .separator {
     display: none !important;
     visibility: hidden !important;
@@ -12,7 +12,7 @@ div#topContainer .right-area .separator {
     padding: 0 !important;
 }
 
-/* Òþ²Ø Craft Í¼±êÁ´½Ó */
+/* éšè— Craft å›¾æ ‡é“¾æŽ¥ */
 div#topContainer .right-area a[href*="craft.do"] {
     display: none !important;
     visibility: hidden !important;
@@ -27,7 +27,7 @@ div#topContainer .right-area a[href*="craft.do"] {
 
 
 
-/*Òþ²Ø²àÀ¸ Craft Í¼±êÁ´½Ó*/
+/*éšè—ä¾§æ  Craft å›¾æ ‡é“¾æŽ¥*/
 div.isOpen a.group {
     display: none !important;
 }
@@ -47,14 +47,14 @@ div:has(>#pageOverlayAccessory) {
 div:has(> div > #pageOverlayAccessory) {
     max-width: 1000px;
 }
-/* Ö»ÔÚ×ÀÃæÉè±¸Ó¦ÓÃÕâÐ©ÑùÊ½ */
+/* åªåœ¨æ¡Œé¢è®¾å¤‡åº”ç”¨è¿™äº›æ ·å¼ */
 @media (min-width: 768px) {
 }
-/* Ö»ÔÚÒÆ¶¯Éè±¸Ó¦ÓÃÕâÐ©ÑùÊ½ */
+/* åªåœ¨ç§»åŠ¨è®¾å¤‡åº”ç”¨è¿™äº›æ ·å¼ */
 @media (max-width: 768px) {
 }
 
-/*ÎÄÕÂÌø×ªloading*/
+/*æ–‡ç« è·³è½¬loading*/
 .loading-animation-container {
     background-color: #E1F0E8;
     background-image: url(/loading.svg);
@@ -66,14 +66,12 @@ div:has(> div > #pageOverlayAccessory) {
         display: none;
     }
 
-/*±êÌâÑùÊ½-¿ªÊ¼*/
-.lake-content h1,
+/*æ ‡é¢˜æ ·å¼-å¼€å§‹*/
 .lake-content h2,
 .lake-content h3 {
     position: relative;
 }
 
-    .lake-content h1:after,
     .lake-content h2:after,
     .lake-content h3:after {
         content: "";
@@ -87,10 +85,6 @@ div:has(> div > #pageOverlayAccessory) {
         bottom: 0px;
     }
 
-    .lake-content h1:after {
-        width: 45px;
-        height: 13px;
-    }
 
     .lake-content h2:after {
         width: 40px;
@@ -102,10 +96,6 @@ div:has(> div > #pageOverlayAccessory) {
         height: 9px;
     }
 
-    .lake-content h1.text-center:after,
-    .lake-content h1[style*="text-align: center"]:after,
-    .lake-content h1[style*="text-align:center"]:after,
-    .lake-content h1[class*="text-align-center"]:after,
     .lake-content h2.text-center:after,
     .lake-content h2[style*="text-align: center"]:after,
     .lake-content h2[style*="text-align:center"]:after,
@@ -118,10 +108,6 @@ div:has(> div > #pageOverlayAccessory) {
         transform: translateX(-50%);
     }
 
-    .lake-content h1.text-right:after,
-    .lake-content h1[style*="text-align: right"]:after,
-    .lake-content h1[style*="text-align:right"]:after,
-    .lake-content h1[class*="text-align-right"]:after,
     .lake-content h2.text-right:after,
     .lake-content h2[style*="text-align: right"]:after,
     .lake-content h2[style*="text-align:right"]:after,
@@ -136,11 +122,7 @@ div:has(> div > #pageOverlayAccessory) {
 
 
 
-.lake-content .no-results header h1:after {
-    display: none !important;
-}
-
-/*  //±êÌâ*/
+/*  //æ ‡é¢˜*/
 .lake-content div[id^="header-"] {
     text-align: center;
 }
@@ -154,7 +136,7 @@ div:has(> div > #pageOverlayAccessory) {
         .lake-content div[id^="header-"] h1:after {
             background: initial;
         }
-/*±êÌâÑùÊ½-½áÊø*/
+/*æ ‡é¢˜æ ·å¼-ç»“æŸ*/
 
 @media only screen and (max-width:768px) {
     .lake-columns {
@@ -165,3 +147,17 @@ div:has(> div > #pageOverlayAccessory) {
         margin-right: 0 !important
     }
 }
+
+
+/*dark mode*/
+html[style*="color-scheme: dark"] div:has([data-page-section="page-body"]) {
+    background-color: #2e2e2e; 
+}
+
+
+html[style*="color-scheme: dark"] [data-page-section="page-body"] p,
+html[style*="color-scheme: dark"] [data-page-section="page-body"] h2,
+html[style*="color-scheme: dark"] [data-page-section="page-body"] h3 {
+    color: #e0e0e0;
+}
+/*dark mode end*/
