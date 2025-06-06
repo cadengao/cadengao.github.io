@@ -1,57 +1,71 @@
 ﻿body {
 }
 
-/* 隐藏分隔线 */
-div#topContainer .right-area .separator {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    width: 0 !important;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
+
 
 /* 隐藏 Craft 图标链接 */
+div#topContainer .right-area .separator {
+    display: none !important;
+}
 div#topContainer .right-area a[href*="craft.do"] {
     display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    width: 0 !important;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    font-size: 0 !important;
-    line-height: 0 !important;
 }
-
-
 
 /*隐藏侧栏 Craft 图标链接*/
 div.isOpen a.group {
     display: none !important;
 }
 
-div#topContainer {
-    margin-top: 70px;
-}
-
 div.isOpen {
     margin-top: 70px;
 }
 
-div:has(>#pageOverlayAccessory) {
-    margin-top: 50px;
-}
+
 
 div:has(> div > #pageOverlayAccessory) {
     max-width: 1000px;
 }
 /* 只在桌面设备应用这些样式 */
 @media (min-width: 768px) {
+    div:has(>#pageOverlayAccessory) {
+        margin-top: 10px;
+    }
+    div#topContainer {
+        visibility: collapse;
+    }
+
+        div#topContainer * {
+            color: white;
+            justify-self: end;
+            top: 6px;
+        }
+
+    #topContainer button {
+        visibility: visible;
+        right: -220px;
+    }
+
+    div#topContainer .right-area {
+        background-color: #3CB371;
+        visibility: visible;
+        right: 240px;
+        top: 0;
+        position: absolute;
+    }
+
+        div#topContainer .right-area > button:first-child {
+            display: none !important;
+        }
+
 }
 /* 只在移动设备应用这些样式 */
 @media (max-width: 768px) {
+    div#topContainer {
+        margin-top:70px;
+    }
+    div:has(>#pageOverlayAccessory) {
+        margin-top: 50px;
+    }
 }
 
 /*文章跳转loading*/
@@ -151,7 +165,7 @@ div:has(> div > #pageOverlayAccessory) {
 
 /*dark mode*/
 html[style*="color-scheme: dark"] div:has([data-page-section="page-body"]) {
-    background-color: #2e2e2e; 
+    background-color: #2e2e2e;
 }
 
 
