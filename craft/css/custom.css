@@ -1,83 +1,115 @@
-﻿body {
+﻿:root:root {
+    --bg-nav: #3CB371;
+    --bg-body: #DEF1E8;
+    --bg-body-dark: #2e2e2e;
+    --bg-fotter: #12B465;
+    --bg-home-doc: #ECF7F2;
+    --cl-title: #109d58;
+    --height-nav: 70px;
+    --height-fotter: 60px;
 }
 
+body {
+}
 
+#topHeader {
+    position: fixed;
+    height: var(--height-nav) !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-nav);
+}
+
+.header-logo-container {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    height: var(--height-nav) !important;
+    margin-left: 10px;
+}
 
 /* 隐藏 Craft 图标链接 */
-div#topContainer .right-area .separator {
+.lake-content div#topContainer .right-area .separator {
     display: none !important;
 }
 
-div#topContainer .right-area a[href*="craft.do"] {
+.lake-content div#topContainer .right-area a[href*="craft.do"] {
     display: none !important;
 }
 
 /*隐藏侧栏 Craft 图标链接*/
-div.isOpen a.group {
+.lake-content div.isOpen a.group {
     display: none !important;
 }
 
-div.isOpen {
-    margin-top: 70px;
+.lake-content div.isOpen {
+    margin-top: var(--height-nav) !important;
 }
 
-
-
-div:has(> div > #pageOverlayAccessory) {
+.lake-content div:has(> div > #pageOverlayAccessory) {
     max-width: 1000px;
 }
+
 /* 只在桌面设备应用这些样式 */
 @media (min-width: 768px) {
-    div:has(>#pageOverlayAccessory) {
+    .lake-content div#topContainer {
+        height: var(--height-nav) !important;
+    }
+
+    .lake-content div#topContainer * {
+        color: white;
+    }
+
+    .lake-content #topContainer button {
+        visibility: visible;
+    }
+
+    .lake-content div#topContainer .right-area > button:first-child {
+        display: none !important;
+    }
+
+    .lake-content div#headerBackground {
+        background-color: var(--bg-nav) !important;
+        opacity: 1 !important;
+    }
+
+    .lake-content div.items-center.justify-between {
+        margin-left: 220px;
+        height: 100%;
+    }
+
+    .lake-content div:has(>#pageOverlayAccessory) {
         margin-top: 10px;
     }
-
-    div#topContainer {
-        margin-left: 220px;
-        margin-top: 12px;
-    }
-
-        div#topContainer * {
-            color: white;
-            background: #3CB371;
-        }
-
-    #topContainer button {
-        visibility: visible;
-    }
-
-    div#topContainer .right-area {
-        visibility: visible;
-        right: 220px;
-        position: fixed;
-    }
-
-        div#topContainer .right-area > button:first-child {
-            display: none !important;
-        }
 }
+
 /* 只在移动设备应用这些样式 */
 @media (max-width: 768px) {
-    div#topContainer {
-        margin-top: 70px;
+    .lake-content div#topContainer {
+        margin-top: var(--height-nav) !important;
     }
 
-    div:has(>#pageOverlayAccessory) {
+    .lake-content div:has(>#pageOverlayAccessory) {
         margin-top: 50px;
     }
 }
 
 /*文章跳转loading*/
-.loading-animation-container {
-    background-color: #E1F0E8;
+.lake-content .loading-animation-container {
+    background-color: var(--bg-body) !important;
     background-image: url(/loading.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
 
-    .loading-animation-container div {
-        display: none;
-    }
+.lake-content .loading-animation-container div {
+    display: none;
+}
 
 /*标题样式-开始*/
 .lake-content h2,
@@ -85,54 +117,53 @@ div:has(> div > #pageOverlayAccessory) {
     position: relative;
 }
 
-    .lake-content h2:after,
-    .lake-content h3:after {
-        content: "";
-        display: block;
-        position: absolute;
-        background: #109d58;
-        opacity: 0.25;
-        pointer-events: none;
-        border-radius: 15px;
-        left: -2px;
-        bottom: 0px;
-    }
+.lake-content h2:after,
+.lake-content h3:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #109d58;
+    opacity: 0.25;
+    pointer-events: none;
+    border-radius: 15px;
+    left: -2px;
+    bottom: 0;
+}
 
 
-    .lake-content h2:after {
-        width: 40px;
-        height: 11px;
-    }
+.lake-content h2:after {
+    width: 40px;
+    height: 11px;
+}
 
-    .lake-content h3:after {
-        width: 30px;
-        height: 9px;
-    }
+.lake-content h3:after {
+    width: 30px;
+    height: 9px;
+}
 
-    .lake-content h2.text-center:after,
-    .lake-content h2[style*="text-align: center"]:after,
-    .lake-content h2[style*="text-align:center"]:after,
-    .lake-content h2[class*="text-align-center"]:after,
-    .lake-content h3.text-center:after,
-    .lake-content h3[style*="text-align: center"]:after,
-    .lake-content h3[style*="text-align:center"]:after,
-    .lake-content h3[class*="text-align-center"]:after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
+.lake-content h2.text-center:after,
+.lake-content h2[style*="text-align: center"]:after,
+.lake-content h2[style*="text-align:center"]:after,
+.lake-content h2[class*="text-align-center"]:after,
+.lake-content h3.text-center:after,
+.lake-content h3[style*="text-align: center"]:after,
+.lake-content h3[style*="text-align:center"]:after,
+.lake-content h3[class*="text-align-center"]:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-    .lake-content h2.text-right:after,
-    .lake-content h2[style*="text-align: right"]:after,
-    .lake-content h2[style*="text-align:right"]:after,
-    .lake-content h2[class*="text-align-right"]:after,
-    .lake-content h3.text-right:after,
-    .lake-content h3[style*="text-align: right"]:after,
-    .lake-content h3[style*="text-align:right"]:after,
-    .lake-content h3[class*="text-align-right"]:after {
-        left: unset;
-        right: -2px;
-    }
-
+.lake-content h2.text-right:after,
+.lake-content h2[style*="text-align: right"]:after,
+.lake-content h2[style*="text-align:right"]:after,
+.lake-content h2[class*="text-align-right"]:after,
+.lake-content h3.text-right:after,
+.lake-content h3[style*="text-align: right"]:after,
+.lake-content h3[style*="text-align:right"]:after,
+.lake-content h3[class*="text-align-right"]:after {
+    left: unset;
+    right: -2px;
+}
 
 
 /*  //标题*/
@@ -140,18 +171,19 @@ div:has(> div > #pageOverlayAccessory) {
     text-align: center;
 }
 
-    .lake-content div[id^="header-"] h1 {
-        font-size: xx-large;
-        color: #109d58;
-        font-weight: bolder;
-    }
+.lake-content div[id^="header-"] h1 {
+    font-size: xx-large;
+    color: #109d58;
+    font-weight: bolder;
+}
 
-        .lake-content div[id^="header-"] h1:after {
-            background: initial;
-        }
+.lake-content div[id^="header-"] h1:after {
+    background: initial;
+}
+
 /*标题样式-结束*/
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
     .lake-columns {
         display: block !important
     }
@@ -163,12 +195,12 @@ div:has(> div > #pageOverlayAccessory) {
 
 
 /*dark mode*/
-html[style*="color-scheme: dark"] div:has([data-page-section="page-body"]) {
-    background-color: #2e2e2e;
+html[style*="color-scheme: dark"] *:has([data-page-section="page-body"]) {
+    background-color: var(--bg-body-dark) !important;
 }
-
 
 html[style*="color-scheme: dark"] [data-page-section="page-body"] :is(p,h2,h3) {
     color: #e0e0e0;
 }
+
 /*dark mode end*/

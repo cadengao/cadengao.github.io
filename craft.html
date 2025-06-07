@@ -9,7 +9,8 @@
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="preconnect" href="https://fonts.loli.net">
-    <link href="https://fonts.loli.net/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.loli.net/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
     <link href="/craft/css/fontdef.r-11-gd9b659d.css" rel="stylesheet">
     <link href="/craft/css/fontdef.r-24-g083f5a5.css" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
@@ -37,76 +38,68 @@
     <meta name="luki:override-static-asset-root" content="https://www.craft.do">
 
     <!--***-->
-    <meta name="luki:disable-fs" content="fs-object-links,fs-show-author,fs-show-watermark,fs-show-duplicate-as-template,fs-email-share,fs-login,fs-open-in-app,fs-download-pdf">
+    <meta name="luki:disable-fs"
+          content="fs-object-links,fs-show-author,fs-show-watermark,fs-show-duplicate-as-template,fs-email-share,fs-login,fs-open-in-app,fs-download-pdf">
     <meta name="luki:enable-fs" content="fs-add-comment,fs-view-comment,fs-show-title,fs-enable-column-view">
     <title>小高的知识库</title>
 </head>
 <body>
-    <div>
-        <header style="position:fixed;width:100%; padding-left: 10px; height: 70px; background-color: #3CB371; display: flex; align-items: center; justify-content: space-between;z-index:9">
-            <a href="/" class="header-logo-container" style="display: flex; flex-direction: row; align-items: center; cursor: pointer;">
-                <img src="/favicon.ico" style="height: 32px; width: 32px;border-radius:5px;" />
-                <p style="color: white; font-size: 28px; font-weight: bold; margin-left: 10px; white-space: nowrap;">
-                    小高的知识库
-                </p>
-            </a>
-            <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 24px; position:fixed;bottom:50px;right:20px;">
-                ☀
-            </button>
-        </header>
-        <div class="lake-content" style="position:relative;margin:0;height:100%;overflow:auto">
-            <div id="root" style="height:100%"></div>
-        </div>
+<div>
+    <div class="lake-content" style="position:relative;margin:0;height:100%;overflow:auto">
+        <div id="root" style="height:100%"></div>
     </div>
-    <script>
-        // 获取按钮和 html 元素
-        const themeToggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
+    <header>
+        <div id="topHeader"></div>
+        <a href="/" class="header-logo-container">
+            <img src="/favicon.ico" style="height: 32px; width: 32px;border-radius:5px;"/>
+            <p style="color: white; font-size: 28px; font-weight: bold; margin-left: 10px; white-space: nowrap;">
+                小高的知识库
+            </p>
+        </a>
+        <button id="theme-toggle"
+                style="border: none; cursor: pointer; font-size: 24px; position:fixed;bottom:50px;right:20px;">
+            ☀
+        </button>
+    </header>
+</div>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
 
-        // 检查本地存储的主题偏好（如果用户之前选择过）
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            html.style.colorScheme = 'dark';
-            themeToggle.textContent = '☾';
-        } else if (savedTheme === 'light') {
-            html.style.colorScheme = 'light';
-            themeToggle.textContent = '☀';
-        }
+    // 初始化主题（默认light）
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.style.colorScheme = savedTheme;
+    themeToggle.textContent = savedTheme === 'dark' ? '☾' : '☀';
 
-        // 点击按钮切换主题
-        themeToggle.addEventListener('click', () => {
-            if (html.style.colorScheme === 'dark') {
-                html.style.colorScheme = 'light';
-                themeToggle.textContent = '☀';
-                localStorage.setItem('theme', 'light');
-            } else {
-                html.style.colorScheme = 'dark';
-                themeToggle.textContent = '☾';
-                localStorage.setItem('theme', 'dark');
-            }
-        });
-    </script>
+    // 切换主题
+    themeToggle.addEventListener('click', () => {
+        const isDark = html.style.colorScheme === 'dark';
+        html.style.colorScheme = isDark ? 'light' : 'dark';
+        themeToggle.textContent = isDark ? '☀' : '☾';
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+</script>
 
-    <script>
-        // 1. 从 URL 路径提取 share-id
-        const urlParams = new URLSearchParams(window.location.search);
-        const shareId = urlParams.get('shareid') || "2kT9lQ2iHq9qZK"; // 默认值
+<script>
+    // 1. 从 URL 路径提取 share-id
+    const urlParams = new URLSearchParams(window.location.search);
+    const shareId = urlParams.get('shareid') || "2kT9lQ2iHq9qZK"; // 默认值
 
-        // 2. 动态插入 meta 标签
-        const metaShareId = document.createElement('meta');
-        metaShareId.name = 'luki:share-id';
-        metaShareId.content = shareId;
-        document.head.appendChild(metaShareId);
+    // 2. 动态插入 meta 标签
+    const metaShareId = document.createElement('meta');
+    metaShareId.name = 'luki:share-id';
+    metaShareId.content = shareId;
+    document.head.appendChild(metaShareId);
 
-        // 3. 动态插入 password-protected 标签
-        const passwordProtected = urlParams.get('protected') || 'false'; // 默认值
-        if (passwordProtected === 'true') {
-            const metaPasswordProtected = document.createElement('meta');
-            metaPasswordProtected.name = 'luki:password-protected';
-            metaPasswordProtected.content = 'true';
-            document.head.appendChild(metaPasswordProtected);
-        }
-    </script>
-    <script type="text/javascript" size="120" alpha='0.6' zIndex="-1" src="/ribbon.min.js"></script>
+    // 3. 动态插入 password-protected 标签
+    const passwordProtected = urlParams.get('protected') || 'false'; // 默认值
+    if (passwordProtected === 'true') {
+        const metaPasswordProtected = document.createElement('meta');
+        metaPasswordProtected.name = 'luki:password-protected';
+        metaPasswordProtected.content = 'true';
+        document.head.appendChild(metaPasswordProtected);
+    }
+</script>
+<script type="text/javascript" size="120" alpha='0.6' zIndex="-1" src="/ribbon.min.js"></script>
 </body>
 </html>
