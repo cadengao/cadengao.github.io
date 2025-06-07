@@ -55,10 +55,21 @@ body {
 .lake-content div:has(> div > #pageOverlayAccessory) {
     max-width: 1000px;
 }
+/* 只在移动设备应用这些样式 -默认 */
+.lake-content div#topContainer {
+    margin-top: var(--height-nav) !important;
+}
 
+.lake-content div:has(>#pageOverlayAccessory) {
+    margin-top: 50px;
+}
+@media (min-width: 0) {
+
+}
 /* 只在桌面设备应用这些样式 */
 @media (min-width: 768px) {
     .lake-content div#topContainer {
+        margin:auto !important;
         height: var(--height-nav) !important;
         z-index: 2000;
     }
@@ -86,16 +97,7 @@ body {
     }
 }
 
-/* 只在移动设备应用这些样式 */
-@media (max-width: 768px) {
-    .lake-content div#topContainer {
-        margin-top: var(--height-nav) !important;
-    }
 
-    .lake-content div:has(>#pageOverlayAccessory) {
-        margin-top: 50px;
-    }
-}
 
 /*文章跳转loading*/
 .lake-content .loading-animation-container {
