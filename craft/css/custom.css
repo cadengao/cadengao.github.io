@@ -19,6 +19,7 @@ body {
     left: 0;
     right: 0;
     background-color: var(--bg-nav);
+    z-index: 1000;
 }
 
 .header-logo-container {
@@ -28,7 +29,7 @@ body {
     cursor: pointer;
     top: 0;
     left: 0;
-    z-index: 99;
+    z-index: 2000;
     height: var(--height-nav) !important;
     margin-left: 10px;
 }
@@ -59,6 +60,7 @@ body {
 @media (min-width: 768px) {
     .lake-content div#topContainer {
         height: var(--height-nav) !important;
+        z-index: 2000;
     }
 
     .lake-content div#topContainer * {
