@@ -118,13 +118,13 @@ body {
 
 /*标题样式-开始*/
 .lake-content h2{
-    font-size:28px;
+    font-size:xx-large;
 }
 .lake-content h3{
-    font-size:26px;
+    font-size:x-large;
 }
 .lake-content h4{
-    font-size:24px;
+    font-size:larger;
 }
 
 .lake-content h2,
@@ -140,26 +140,28 @@ body {
     display: block;
     position: absolute;
     background: #109d58;
-    opacity: 0.25;
+    opacity: 0.3;
     pointer-events: none;
     border-radius: 15px;
     left: -2px;
-    bottom: 0;
 }
 
 .lake-content h2:after {
     width: 45px;
     height: 13px;
+    bottom: -10px;
 }
 
 .lake-content h3:after {
     width: 40px;
     height: 11px;
+    bottom: -8px;
 }
 
 .lake-content h4:after {
     width: 30px;
     height: 9px;
+    bottom: -4px;
 }
 
 
