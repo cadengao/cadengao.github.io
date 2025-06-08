@@ -191,6 +191,10 @@ body {
     .lake-column-item {
         margin-right: 0 !important
     }
+
+    button#theme-toggle{
+        right: 0 !important;
+    }
 }
 
 
