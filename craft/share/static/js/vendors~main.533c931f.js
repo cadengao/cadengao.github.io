@@ -2000,7 +2000,7 @@
       color: ${e=>{let{theme:t}=e;return t.colors.neutral[500]}};
     }
   }
-`,g=e=>{let{onClose:t,isOneLine:n=!1,skipDivider:r=!1,header:o,skipTopPadding:i,className:a}=e;return(0,p.jsxs)(p.Fragment,{children:[(0,p.jsxs)(y,{$direction:"row",justifyContent:"space-between",alignItems:"center",paddingTop:i?0:12,paddingBottom:8,skipTopPadding:i,className:a,children:[(0,p.jsx)(b,{className:s()({isOneLine:n}),children:o}),t&&(0,p.jsx)(h,{asProps:{"aria-label":"Close"},onClick:t})]}),!r&&(0,p.jsx)(v,{})]})},v=r.Ay.div`
+`,g=e=>{let{onClose:t,isOneLine:n=!1,skipDivider:r=!1,header:o,skipTopPadding:i,className:a}=e;return(0,p.jsxs)(p.Fragment,{children:[(0,p.jsxs)(y,{$direction:"row",justifyContent:"space-between",alignItems:"center",paddingTop:i?0:12,paddingBottom:8,skipTopPadding:i,className:a,children:[(0,p.jsx)(b,{className:s()({isOneLine:n}),children:o}),t&&(0,p.jsx)(h,{asProps:{"aria-label":"关闭"},onClick:t})]}),!r&&(0,p.jsx)(v,{})]})},v=r.Ay.div`
   width: 100%;
   height: 1px;
   flex: 0 0 1px;
