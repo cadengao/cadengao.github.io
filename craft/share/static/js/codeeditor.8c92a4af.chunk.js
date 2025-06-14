@@ -396,7 +396,7 @@
                                     onClick: te,
                                     children: (0,
                                     U.jsx)(o.JU, {
-                                        children: "Copy"
+                                        children: "复制"
                                     })
                                 })
                             })
