@@ -249,7 +249,7 @@
             ), [d, q])
               , te = () => {
                 (0,
-                f.eG)(J) && null != B.current && B.current.flashMessage("Code copied", "info")
+                f.eG)(J) && null != B.current && B.current.flashMessage("代码复制成功！", "info")
             }
             ;
             (0,
@@ -286,7 +286,7 @@
                         U.jsxs)($.Q, {
                             children: [(0,
                             U.jsx)(M.m_, {
-                                content: "Copy Code",
+                                content: "复制代码",
                                 asChild: !0,
                                 disableHoverableContent: !0,
                                 children: (0,
@@ -298,7 +298,7 @@
                                 })
                             }), (0,
                             U.jsx)(M.m_, {
-                                content: "Full Screen Mode",
+                                content: "全屏显示代码",
                                 asChild: !0,
                                 disableHoverableContent: !0,
                                 children: (0,
