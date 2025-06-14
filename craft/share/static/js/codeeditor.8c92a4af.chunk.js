@@ -298,7 +298,7 @@
                                 })
                             }), (0,
                             U.jsx)(M.m_, {
-                                content: "全屏显示代码",
+                                content: "全屏展示代码",
                                 asChild: !0,
                                 disableHoverableContent: !0,
                                 children: (0,
