@@ -1793,7 +1793,7 @@ const initCraftDocModule = () => {
           margin-right: auto;
           margin-left: auto;
 
-          width: calc(100% - 24px);
+          width: 100%;
         `}
 
   /* Page separator */
@@ -2418,8 +2418,8 @@ const initCraftDocModule = () => {
     width: calc(100vw);
     padding: 0;
     margin: 0;
-    margin-left: calc((100vw - ${e => e.pageWidth}px) / -2);
-    padding-left: ${e => { let { theme: t } = e; return t.isScrollbarPersistent ? 14 : 0 }}px;
+    margin-left: 0;
+    padding-left: 0;
     box-sizing: border-box;
   }
 
