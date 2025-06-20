@@ -247,7 +247,7 @@ FISH.prototype = {
       (this.renderer.width + this.renderer.THRESHOLD) :
       -this.renderer.THRESHOLD;
     this.previousY = this.y;
-    this.vx = this.getRandomValue(8, 16) * (this.direction ? -1 : 1);
+    this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1);
 
     if (this.renderer.reverse) {
       this.y = this.getRandomValue(this.renderer.height * 0.1, this.renderer.height * 0.4);
