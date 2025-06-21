@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "1",
+  "spaceId": "d8d537f0-b7d4-e6fe-0216-30e666a82048",
+  "documentId": "0F2EF9E4-53C6-43FE-8F64-29CDD87893ED",
+  "blocks": [
+    {
+      "id": "126A7BDD-5644-4970-A5C8-95047E46F02C",
+      "documentId": "0F2EF9E4-53C6-43FE-8F64-29CDD87893ED",
+      "content": "<Window x:Class=\"WpfApp1.Window4\"\n  xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n  xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n  xmlns:d=\"http://schemas.microsoft.com/expression/blend/2008\"\n  xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\"\n  xmlns:local=\"clr-namespace:WpfApp1\"\n  mc:Ignorable=\"d\"\n  Title=\"Window4\" Height=\"450\" Width=\"800\">\n  <Grid>\n    <StackPanel>\n      <Slider x:Name=\"slider\" Height=\"30\"/>\n      <!--建立双向绑定当滑块值变动的时候，Text中的值也会发生变化，反之Text发生变化滑块也会变化-->\n      <TextBox Height=\"30\" Margin=\"5\" Text=\"{Binding ElementName=slider,Path=Value,Mode=Default}\"/>\n      <!--绑定第一次便不再发生变化-->\n      <TextBox Height=\"30\" Margin=\"5\" Text=\"{Binding ElementName=slider,Path=Value,Mode=OneTime}\"/>\n      <!--单项绑定-->\n      <TextBox Height=\"30\" Margin=\"5\" Text=\"{Binding ElementName=slider,Path=Value,Mode=OneWay}\"/>\n      <!--双向绑定-->\n      <TextBox Height=\"30\" Margin=\"5\" Text=\"{Binding ElementName=slider,Path=Value,Mode=TwoWay}\"/>\n      <!--从输入框获取的绑定值，滑块没有影响，另一种单项绑定-->\n      <TextBox Height=\"30\" Margin=\"5\" Text=\"{Binding ElementName=slider,Path=Value,Mode=OneWayToSource}\"/>\n\n\n      <!--代码绑定方式1-->\n      <TextBox Height=\"30\" Margin=\"5\" Text=\"{Binding Name}\"/>\n\n    </StackPanel>\n\n  </Grid>\n</Window>",
+      "rawProperties": "{\"language\":\"xml\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687574629099,
+      "type": "code",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "pluginData": "{\"horizontalSizeClass\":\"regular\",\"pluginConfigurationData\":\"{\\\"themeId\\\":\\\"auto\\\"}\",\"pluginName\":\"codeBlock\",\"surfaceShadowOpacity\":0,\"verticalSizeClass\":\"regular\"}",
+      "updated": 1749798331488
+    },
+    {
+      "id": "431CEF1B-E287-464A-937A-A559D024C659",
+      "documentId": "0F2EF9E4-53C6-43FE-8F64-29CDD87893ED",
+      "content": "示例截图",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687574629101,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"title\"}",
+      "blocks": [],
+      "updated": 1687574629101
+    },
+    {
+      "id": "4A2EC2FE-46D8-4871-9524-34FD9CB67212",
+      "documentId": "0F2EF9E4-53C6-43FE-8F64-29CDD87893ED",
+      "content": "https://secure-res.craft.do/v2/b3GBU8wMT7ZXZyJSegKksVJwRgmG1ESg1SpgASQq74r8B1fQaaeucwB1e8cauD9p3szVbt17xcoCbx14iab59NS5EK2cKULMzqAmKJNF3TefHE98C5vpb6dB7P76CwtegKVtET8DSSrEd664DQDh6Zp5Gk2sDvrDGnR1yUszVM9GLmNjVsK1q1jKqRm7rjDemQcFqwpKMvor6oykYSpzKh6qPJDMXm6DcAshQ9pzXSqB4HBRGf4QxUBqaQs9ueogUAxcbUTVUk9jE24rE1P3o7hMTqKvyzfi39rxpWMJDzt8mX3ZGK",
+      "pageStyleData": "{}",
+      "rawProperties": "{\"aspectRatio\":\"1.7763636363636364\",\"fileExtension\":\"tiff\",\"fileName\":\"Image.tiff\",\"isPreviewImageUploaded\":\"true\",\"mimeType\":\"image/tiff\",\"previewImageWidth\":\"977.0\",\"primaryColor\":\"16711422\",\"rawDataSize\":\"1616392\",\"rawUrl\":\"https://secure-res.craft.do/v2/b3GBU8wMT7ZXZyJSegKksVJwRgmG1ESg1SpgASQq74r877TdFNaUCQ3N9PLo4YRUwg1EZxPGLspjd8wrdVX4eX4sgh6DbDBPy2HCKKZ9ymzvAuAabMCf9DAq2MiMagtE4KQ8oPXnmXqDV7yZr9PxaGDzyBd1YaGqFwUWwGbEBXAswGSg6s2UVqGX5SGkAfQscEHFZjnTdVFPnuunFuuom1RRbt95679L2N782HHqcG2WpPQEX9GHsr7BgGCzBYNrEtxr29KN7X4NfHTnxHoXbm2oM76cZcB2v72t9VRZjrwVL3iHis/Image.jpg\",\"uploaded\":\"true\",\"url\":\"https://secure-res.craft.do/v2/b3GBU8wMT7ZXZyJSegKksVJwRgmG1ESg1SpgASQq74r8B1fQaaeucwB1e8cauD9p3szVbt17xcoCbx14iab59NS5EK2cKULMzqAmKJNF3TefHE98C5vpb6dB7P76CwtegKVtET8DSSrEd664DQDh6Zp5Gk2sDvrDGnR1yUszVM9GLmNjVsK1q1jKqRm7rjDemQcFqwpKMvor6oykYSpzKh6qPJDMXm6DcAshQ9pzXSqB4HBRGf4QxUBqaQs9ueogUAxcbUTVUk9jE24rE1P3o7hMTqKvyzfi39rxpWMJDzt8mX3ZGK/Image.jpg\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687574649850,
+      "type": "image",
+      "style": "{\"decorations\":{},\"decorationStyles\":{},\"imageFillStyle\":\"scaleAspectFit\",\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1687574660892
+    },
+    {
+      "id": "63932C50-41DD-4832-9735-CE87EFBF707B",
+      "documentId": "0F2EF9E4-53C6-43FE-8F64-29CDD87893ED",
+      "content": "using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing System.Threading.Tasks;\nusing System.Windows;\nusing System.Windows.Controls;\nusing System.Windows.Data;\nusing System.Windows.Documents;\nusing System.Windows.Input;\nusing System.Windows.Media;\nusing System.Windows.Media.Imaging;\nusing System.Windows.Shapes;\n\nnamespace WpfApp1\n{\n    /// <summary>\n    /// Window4.xaml 的交互逻辑\n    /// </summary>\n    public partial class Window4 : Window\n    {\n        public Window4()\n        {\n            InitializeComponent();\n            this.DataContext = new Test()\n            {\n                Name = \"张三\"\n            };\n\n        }\n    }\n\n    public class Test\n    {\n        public string Name { get; set; }\n    }\n}",
+      "rawProperties": "{\"language\":\"cs\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687574629100,
+      "type": "code",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "pluginData": "{\"horizontalSizeClass\":\"regular\",\"pluginConfigurationData\":\"{\\\"themeId\\\":\\\"\\\"}\",\"pluginName\":\"codeBlock\",\"surfaceShadowOpacity\":0,\"verticalSizeClass\":\"regular\"}",
+      "updated": 1687574657636
+    },
+    {
+      "id": "B3B9FBAA-AAAC-4B75-A471-4EA248DB91E6",
+      "documentId": "0F2EF9E4-53C6-43FE-8F64-29CDD87893ED",
+      "content": "开发示例-后端",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749114566821,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"title\"}",
+      "blocks": [],
+      "updated": 1749114573677
+    },
+    {
+      "id": "C6044CE1-272E-42E6-A67B-11102D95D928",
+      "documentId": "0F2EF9E4-53C6-43FE-8F64-29CDD87893ED",
+      "content": "WPF-绑定【Area】",
+      "pageStyleData": "{\"background\":{\"size\":\"full\",\"solidColor\":\"#def1e8\",\"type\":\"solid\"},\"isMirrored\":true,\"pageWidthType\":\"true\",\"styleId\":\"luki\"}",
+      "rawProperties": "{\"coverImageEnabled\":\"false\",\"hasBeenPagifiedBefore\":\"1\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687574627151,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"pageRegular\"}",
+      "blocks": [
+        "D226854F-2200-42D6-AEA7-ED6B6D590594",
+        "126A7BDD-5644-4970-A5C8-95047E46F02C",
+        "B3B9FBAA-AAAC-4B75-A471-4EA248DB91E6",
+        "63932C50-41DD-4832-9735-CE87EFBF707B",
+        "431CEF1B-E287-464A-937A-A559D024C659",
+        "4A2EC2FE-46D8-4871-9524-34FD9CB67212"
+      ],
+      "pageStyleProps": "{\"color\":\"#1F2225 #F4F4F4\",\"backdrop\":\"#def1e8 #def1e8\",\"theme-id\":\"93B1678D-2E9B-40FC-ABCD-05E051432252\",\"card-assets\":\"none\",\"font-family\":\"system\",\"page-width-type\":\"true\",\"separator-style\":\"line\",\"background-color\":\"#FFFFFF #222222\"}",
+      "updated": 1749799604087
+    },
+    {
+      "id": "D226854F-2200-42D6-AEA7-ED6B6D590594",
+      "documentId": "0F2EF9E4-53C6-43FE-8F64-29CDD87893ED",
+      "content": "开发示例-前端 ui",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687574629099,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"fontStyle\":\"system\",\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"title\"}",
+      "blocks": [],
+      "updated": 1749114588704
+    }
+  ],
+  "inheritedPageStyle": {
+    "pageWidthType": "true",
+    "background": {
+      "size": "full",
+      "solidColor": "#def1e8",
+      "type": "solid"
+    },
+    "styleId": "luki",
+    "header": {}
+  },
+  "inheritedPageStyleProps": {
+    "color": "#1F2225 #F4F4F4",
+    "backdrop": "#def1e8 #def1e8",
+    "theme-id": "93B1678D-2E9B-40FC-ABCD-05E051432252",
+    "card-assets": "none",
+    "font-family": "system",
+    "page-width-type": "true",
+    "separator-style": "line",
+    "background-color": "#FFFFFF #222222"
+  },
+  "rootBlockId": "C6044CE1-272E-42E6-A67B-11102D95D928",
+  "settings": {
+    "documentAppearance": "default",
+    "hiddenLogo": false,
+    "freeTier": false,
+    "teamId": "e5336d46-6f5f-1acd-7266-4d0fefce8055",
+    "forceSwitches": {}
+  },
+  "features": {
+    "enabled": [
+      "fs-show-title",
+      "fs-enable-column-view"
+    ],
+    "disabled": [
+      "fs-add-comment",
+      "fs-view-comment",
+      "fs-object-links",
+      "fs-show-author",
+      "fs-show-custom-logo",
+      "fs-show-duplicate-as-template",
+      "fs-hide-logo",
+      "fs-hide-table-of-contents",
+      "fs-hide-presentation-mode"
+    ]
+  }
+}

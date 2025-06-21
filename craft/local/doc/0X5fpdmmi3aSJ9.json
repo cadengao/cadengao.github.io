@@ -1,0 +1,236 @@
+{
+  "schemaVersion": "1",
+  "spaceId": "00be9a3c-07c6-267d-eb0e-2c13078f3c6a",
+  "documentId": "5AB7532F-A831-4CCB-8D09-F027D00FC985",
+  "blocks": [
+    {
+      "id": "2DE8E65F-53E8-4C99-AA6C-49171C2D7C8F",
+      "documentId": "5AB7532F-A831-4CCB-8D09-F027D00FC985",
+      "content": "在netlify上部署该代码",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126982936,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"title\"}",
+      "blocks": [],
+      "updated": 1749126982936
+    },
+    {
+      "id": "2E92CEC5-5C26-4170-B880-1E8F5220745C",
+      "documentId": "5AB7532F-A831-4CCB-8D09-F027D00FC985",
+      "content": "https://secure-res.craft.do/v2/DVhdgzNY6QDxDUbfn9ToYDqTninENaDMx1tUAgGsdhtvEa1i6io9ix3te7gDF99AEzWNugQptKaDEgHb7APGcFGJ1pqNUNq4q3jrDPAyW7a7weJZ7EcTCFvbL5z2v67M3cwmrydTbcNBSD3vPHPyFMzuMcMLWaNnV1BVM6ZLjiqzw3VB3U6Mgy9znQtZudTMvQfBrZmGXaT47h5ZRQ2aW51eRbfjNsS1tTkChRpEZAC47UtCLvHPVsvxsAuRdEVQhUruJNciNt5CwbatrutZCU6onGd2Pbc2ZtNnLnsSzyM7jmwbxN",
+      "rawProperties": "{\"aspectRatio\":\"0.6333333333333333\",\"fileExtension\":\"png\",\"fileName\":\"Image.png\",\"isPreviewImageUploaded\":\"true\",\"mimeType\":\"image/png\",\"previewImageWidth\":\"228.0\",\"primaryColor\":\"16777215\",\"rawDataSize\":\"53558\",\"rawUrl\":\"https://secure-res.craft.do/v2/DVhdgzNY6QDxDUbfn9ToYDqTninENaDMx1tUAgGsdhtvGsp2TCUEZP2ZKcSpkopJLWsma8E7KhazNLKnePXyb4MRaDEj7JTQXxKTuf9s2VNYepvM3RRnPAukciW9VuPtSm8nb4knneLCebMxVA6Tvg7kYMc9QMTWLfbWGcdfqYSRwtD94yG4ZZ2KJgecj5HLKVi7TuVi8NtXbnDvZA3Hn3TqcjV8dTg8KvTHoGzpqJNd9MxGWbDidae8qvDTYofFnJZBUBzCjxHSJuGFTf1sEKNCEexcMCWeguUYd5mYdcEuFAL7VA/Image.jpg\",\"uploaded\":\"true\",\"url\":\"https://secure-res.craft.do/v2/DVhdgzNY6QDxDUbfn9ToYDqTninENaDMx1tUAgGsdhtvEa1i6io9ix3te7gDF99AEzWNugQptKaDEgHb7APGcFGJ1pqNUNq4q3jrDPAyW7a7weJZ7EcTCFvbL5z2v67M3cwmrydTbcNBSD3vPHPyFMzuMcMLWaNnV1BVM6ZLjiqzw3VB3U6Mgy9znQtZudTMvQfBrZmGXaT47h5ZRQ2aW51eRbfjNsS1tTkChRpEZAC47UtCLvHPVsvxsAuRdEVQhUruJNciNt5CwbatrutZCU6onGd2Pbc2ZtNnLnsSzyM7jmwbxN/Image.jpg\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749127002004,
+      "type": "image",
+      "style": "{\"decorationStyles\":{},\"decorations\":{},\"imageFillStyle\":\"scaleAspectFit\",\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749127004551
+    },
+    {
+      "id": "2F08B026-696A-42FA-9ABA-3CC4E96C8F7D",
+      "documentId": "5AB7532F-A831-4CCB-8D09-F027D00FC985",
+      "content": "1、浏览器打开https://cadenbaseapi.netlify.app/.netlify/functions/hello\n   会出现结果\n{\"message\":\"Hello from Netlify!\"}\n\n2、浏览器打开https://cadenbaseapi.netlify.app/.netlify/functions/mysql\n   会出现结果,如果有参数，则后面加上“?sql= select * from tb_doc”\n{\"message\": \"Query cache cleared.\"}",
+      "rawProperties": "{\"language\":\"other\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126982937,
+      "type": "code",
+      "style": "{\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749126982937
+    },
+    {
+      "id": "383D5E08-C3D1-4448-A1B3-61A6B9704D04",
+      "documentId": "5AB7532F-A831-4CCB-8D09-F027D00FC985",
+      "content": "测试",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126982936,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749126982936
+    },
+    {
+      "id": "3D2E6881-7BCF-40B6-860A-ADE9F1475E0C",
+      "documentId": "5AB7532F-A831-4CCB-8D09-F027D00FC985",
+      "content": "安装node.js",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126982934,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749126982934
+    },
+    {
+      "id": "51CF3443-0094-444A-AB9D-92AA914BE0AD",
+      "documentId": "5AB7532F-A831-4CCB-8D09-F027D00FC985",
+      "content": "结构如下图",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126982935,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\",\"userDefinedListNumber\":4}",
+      "blocks": [],
+      "updated": 1749219967265
+    },
+    {
+      "id": "5894CB9F-E546-4F49-83A3-CF2F66295F88",
+      "documentId": "5AB7532F-A831-4CCB-8D09-F027D00FC985",
+      "content": "在netlify上部署云函数【Resource】",
+      "pageStyleData": "{\"background\":{\"size\":\"full\",\"solidColor\":\"#007558\",\"type\":\"solid\"},\"isMirrored\":true,\"pageWidthType\":\"true\",\"styleId\":\"luki\"}",
+      "rawProperties": "{\"coverImageEnabled\":\"false\",\"hasBeenPagifiedBefore\":\"1\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126971774,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"pageRegular\"}",
+      "blocks": [
+        "8DE8610C-9392-458A-B19C-611481112686",
+        "3D2E6881-7BCF-40B6-860A-ADE9F1475E0C",
+        "A415C3BC-3848-44E1-A44D-40AA0577E7C7",
+        "A1D9B0A7-36B0-43BB-AC52-7C7A9FAA5B82",
+        "6A4CE31A-253D-4656-B253-4587A4364A80",
+        "F8DF4ABD-8A94-4CE8-90AC-62C93A29409F",
+        "51CF3443-0094-444A-AB9D-92AA914BE0AD",
+        "2E92CEC5-5C26-4170-B880-1E8F5220745C",
+        "2DE8E65F-53E8-4C99-AA6C-49171C2D7C8F",
+        "B0BE0C6C-CBCE-41CD-95A0-1660DBFA41A4",
+        "383D5E08-C3D1-4448-A1B3-61A6B9704D04",
+        "2F08B026-696A-42FA-9ABA-3CC4E96C8F7D"
+      ],
+      "pageStyleProps": "{\"color\":\"#00664D #D6FFF5\",\"backdrop\":\"#007558 #007558\",\"theme-id\":\"3115322C-BA8B-454C-B981-EE7CC48F7110\",\"card-assets\":\"#007558 #007558\",\"font-family\":\"system\",\"page-width-type\":\"true\",\"separator-style\":\"line\",\"background-color\":\"#CBF1E8 #00503C\"}",
+      "updated": 1749800380297
+    },
+    {
+      "id": "6A4CE31A-253D-4656-B253-4587A4364A80",
+      "documentId": "5AB7532F-A831-4CCB-8D09-F027D00FC985",
+      "content": "[build] \nfunctions = \"functions\"",
+      "rawProperties": "{\"language\":\"other\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126982935,
+      "type": "code",
+      "style": "{\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749126982935
+    },
+    {
+      "id": "8DE8610C-9392-458A-B19C-611481112686",
+      "documentId": "5AB7532F-A831-4CCB-8D09-F027D00FC985",
+      "content": "推送代码到github上",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126982933,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"title\"}",
+      "blocks": [],
+      "updated": 1749126982933
+    },
+    {
+      "id": "A1D9B0A7-36B0-43BB-AC52-7C7A9FAA5B82",
+      "documentId": "5AB7532F-A831-4CCB-8D09-F027D00FC985",
+      "content": "根目录新建netlify.toml文件和functions目录下hello.js和mysql.js文件",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126982934,
+      "type": "text",
+      "style": "{\"_runAttributes\":[{\"isCode\":true,\"range\":[5,12]},{\"isCode\":true,\"range\":[20,9]},{\"isCode\":true,\"range\":[32,8]},{\"isCode\":true,\"range\":[41,8]}],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749126982934
+    },
+    {
+      "id": "A415C3BC-3848-44E1-A44D-40AA0577E7C7",
+      "documentId": "5AB7532F-A831-4CCB-8D09-F027D00FC985",
+      "content": "执行语句npm install mysql2",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126982934,
+      "type": "text",
+      "style": "{\"_runAttributes\":[{\"isCode\":true,\"range\":[4,18]}],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749126982934
+    },
+    {
+      "id": "B0BE0C6C-CBCE-41CD-95A0-1660DBFA41A4",
+      "documentId": "5AB7532F-A831-4CCB-8D09-F027D00FC985",
+      "content": "部署完成后，添加环境变量",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126982936,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749126982936
+    },
+    {
+      "id": "F8DF4ABD-8A94-4CE8-90AC-62C93A29409F",
+      "documentId": "5AB7532F-A831-4CCB-8D09-F027D00FC985",
+      "content": "const mysql = require('mysql2/promise');\n\n// 获取数据库连接配置\nconst connectionConfig = {\n  host: process.env.DB_HOST,\n  port: process.env.DB_PORT,\n  user: process.env.DB_USER,\n  password: process.env.DB_PASSWORD,\n  database: process.env.DB_NAME\n};\n\n// 存储 SQL 查询结果的缓存\nlet queryCache = {};\n\nexports.handler = async (event, context) => {\n  // 解析查询字符串参数\n  const { sql } = event.queryStringParameters || {};\n\n  // 如果传入的 sql 为空，清空缓存\n  if (!sql) {\n    queryCache = {};  // 清空缓存\n    return {\n      statusCode: 200,\n      headers: {\n        'Access-Control-Allow-Origin': '*', // 允许的来源\n        'Content-Type': 'application/json' // 设置内容类型\n      },\n      body: JSON.stringify({ message: 'Query cache cleared.' }),\n    };\n  }\n\n  // 返回错误信息，如果 sql 为空或无效\n  if (!sql.trim()) {\n    return {\n      statusCode: 400,\n      headers: {\n        'Access-Control-Allow-Origin': '*', // 允许的来源\n        'Content-Type': 'application/json' // 设置内容类型\n      },\n      body: JSON.stringify({ message: 'SQL query is required.' }),\n    };\n  }\n\n  // 检查缓存中是否已存在查询结果\n  if (queryCache[sql]) {\n    return {\n      statusCode: 200,\n      headers: {\n        'Access-Control-Allow-Origin': '*', // 允许的来源\n        'Content-Type': 'application/json' // 设置内容类型\n      },\n      body: JSON.stringify(JSON.parse(queryCache[sql])),\n    };\n  }\n\n  try {\n    // 创建数据库连接\n    const connection = await mysql.createConnection(connectionConfig);\n\n    // 执行查询\n    const [rows] = await connection.execute(sql);\n\n    // 将结果存入缓存\n    queryCache[sql] = JSON.stringify(rows);\n\n    // 关闭连接\n    await connection.end();\n\n    // 返回查询结果\n    return {\n      statusCode: 200,\n      headers: {\n        'Access-Control-Allow-Origin': '*', // 允许的来源\n        'Content-Type': 'application/json' // 设置内容类型\n      },\n      body: JSON.stringify(rows),\n    };\n  } catch (error) {\n    console.error('Database query error:', error);\n    return {\n      statusCode: 500,\n      headers: {\n        'Access-Control-Allow-Origin': '*', // 允许的来源\n        'Content-Type': 'application/json' // 设置内容类型\n      },\n      body: JSON.stringify({ message: 'Internal Server Error', error: error.message }),\n    };\n  }\n};",
+      "rawProperties": "{\"language\":\"other\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126982935,
+      "type": "code",
+      "style": "{\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749126982935
+    }
+  ],
+  "inheritedPageStyle": {
+    "pageWidthType": "true",
+    "background": {
+      "size": "full",
+      "solidColor": "#007558",
+      "type": "solid"
+    },
+    "styleId": "luki",
+    "header": {}
+  },
+  "inheritedPageStyleProps": {
+    "color": "#00664D #D6FFF5",
+    "backdrop": "#007558 #007558",
+    "theme-id": "3115322C-BA8B-454C-B981-EE7CC48F7110",
+    "card-assets": "#007558 #007558",
+    "font-family": "system",
+    "page-width-type": "true",
+    "separator-style": "line",
+    "background-color": "#CBF1E8 #00503C"
+  },
+  "rootBlockId": "5894CB9F-E546-4F49-83A3-CF2F66295F88",
+  "settings": {
+    "documentAppearance": "default",
+    "hiddenLogo": false,
+    "freeTier": false,
+    "teamId": "e5336d46-6f5f-1acd-7266-4d0fefce8055",
+    "forceSwitches": {}
+  },
+  "features": {
+    "enabled": [
+      "fs-show-title",
+      "fs-enable-column-view"
+    ],
+    "disabled": [
+      "fs-add-comment",
+      "fs-view-comment",
+      "fs-object-links",
+      "fs-show-author",
+      "fs-show-custom-logo",
+      "fs-show-duplicate-as-template",
+      "fs-hide-logo",
+      "fs-hide-table-of-contents",
+      "fs-hide-presentation-mode"
+    ]
+  }
+}
