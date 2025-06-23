@@ -1,0 +1,195 @@
+{
+  "schemaVersion": "1",
+  "spaceId": "d8d537f0-b7d4-e6fe-0216-30e666a82048",
+  "documentId": "AF8CB7DE-9A98-442D-95DF-86573F4ACE0A",
+  "blocks": [
+    {
+      "id": "17205DCC-F7CA-42C0-A017-EB47391BB553",
+      "documentId": "AF8CB7DE-9A98-442D-95DF-86573F4ACE0A",
+      "content": "void ButtonClick(object sender, RoutedEventArgs e)\n{\n    //在UI线程(主线程)中调用Invoke和BeginInvoke(一般不这样用，没有实际意义)\n    //这里会阻塞UI\n    this.Dispatcher.Invoke(() =>\n     {\n         this.ContentTextBlock.Text += \"Main thread Invoke and thread id :\" + Thread.CurrentThread.ManagedThreadId + '\\n';\n     });\n    //这里不会阻塞UI\n     this.Dispatcher.BeginInvoke(new Action(delegate\n     {\n         this.ContentTextBlock.Text += \"Main thread BeginInvoke and thread id :\" + Thread.CurrentThread.ManagedThreadId + '\\n';\n     }));\n     //在工作者线程中调用Invoke和BeginInvoke\n    Task.Factory.StartNew(() =>\n    {\n        //这里会阻塞UI\n        this.Dispatcher.Invoke(() =>\n        {\n            this.ContentTextBlock.Text += \" Worker thread Invoke and thread id :\" + Thread.CurrentThread.ManagedThreadId + '\\n';\n        });\n        //这里不会阻塞UI\n        this.Dispatcher.BeginInvoke(new Action(delegate\n        {\n            this.ContentTextBlock.Text += \" Worker thread BeginInvoke and thread id :\" + Thread.CurrentThread.ManagedThreadId + '\\n';\n        }));\n    });\n}\n//输出结果\nMain thread Invoke and thread id : 10\nMain thread BeginInvoke and thread id : 10\nWorker thread Invoke and thread id : 10\nWorker thread BeginInvoke and thread id : 10",
+      "rawProperties": "{\"language\":\"cs\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687575524222,
+      "type": "code",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "pluginData": "{\"horizontalSizeClass\":\"regular\",\"pluginConfigurationData\":\"{\\\"themeId\\\":\\\"\\\"}\",\"pluginName\":\"codeBlock\",\"surfaceShadowOpacity\":0,\"verticalSizeClass\":\"regular\"}",
+      "updated": 1687575535403
+    },
+    {
+      "id": "187F2D12-F13E-4332-9AAD-B0D73540BD7B",
+      "documentId": "AF8CB7DE-9A98-442D-95DF-86573F4ACE0A",
+      "content": "在非UI线程更新UI，通过调用Invoke和BeginInvoke来实现，那么两者有什么区别呢？",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687575524217,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1687575524218
+    },
+    {
+      "id": "2161F7E9-4EA0-415F-BE53-8568B5E8EDBE",
+      "documentId": "AF8CB7DE-9A98-442D-95DF-86573F4ACE0A",
+      "content": "Invoke调用后将指定代码立即插入主线程中执行，而BeginInvoke调用后，发送消息给UI线程，相当于向Dispatcher队列中添加工作项，待之前UI更新任务完成后，再执行BeginInvoke中的内容。",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687575524219,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":1,\"listStyle\":\"numbered\",\"textStyle\":\"body\",\"userDefinedListNumber\":2}",
+      "blocks": [],
+      "updated": 1687575524219
+    },
+    {
+      "id": "63D98B19-5CF6-4B12-BD0A-E0B0B9452EDB",
+      "documentId": "AF8CB7DE-9A98-442D-95DF-86573F4ACE0A",
+      "content": "相同点：两者虽然一个为同步，一个为异步，实际是运行在同一线程，即UI主线程。",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687575524221,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\",\"userDefinedListNumber\":2}",
+      "blocks": [],
+      "updated": 1687575524221
+    },
+    {
+      "id": "654BB2C4-95F5-4208-9CAF-83CF1B1EDB77",
+      "documentId": "AF8CB7DE-9A98-442D-95DF-86573F4ACE0A",
+      "content": "在WPF多线程编程中，经常要在工作线程中更新界面显示，Invoke和BeginInvoke即是为了解决此类问题。在WPF多线程编程模型中，通过Dispatcher调度程序，来管理UI工作项队列，并拥有应用程序主线程，在大多数WPF应用程序中，只存在一个用户界面线程和一个调度器。",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687575524217,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1687575524217
+    },
+    {
+      "id": "862746C5-1D8E-4352-B692-403182920FE1",
+      "documentId": "AF8CB7DE-9A98-442D-95DF-86573F4ACE0A",
+      "content": "WPF-Invoke与BeginInvoke的区别【Area】",
+      "pageStyleData": "{\"background\":{\"size\":\"full\",\"solidColor\":\"#def1e8\",\"type\":\"solid\"},\"isMirrored\":true,\"pageWidthType\":\"true\",\"styleId\":\"luki\"}",
+      "rawProperties": "{\"coverImageEnabled\":\"false\",\"hasBeenPagifiedBefore\":\"1\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687575522499,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"pageRegular\"}",
+      "blocks": [
+        "654BB2C4-95F5-4208-9CAF-83CF1B1EDB77",
+        "187F2D12-F13E-4332-9AAD-B0D73540BD7B",
+        "F41C30C9-DCD8-4A87-ADA5-7F7B5E9C6657",
+        "DEFEB2A4-46DF-4CB1-B98D-552E28909B2F",
+        "2161F7E9-4EA0-415F-BE53-8568B5E8EDBE",
+        "CB37612A-ECFF-402A-9808-1B8A2E47D2BA",
+        "63D98B19-5CF6-4B12-BD0A-E0B0B9452EDB",
+        "DDED598E-57D9-43A6-9A51-EBFB54C52973",
+        "17205DCC-F7CA-42C0-A017-EB47391BB553"
+      ],
+      "pageStyleProps": "{\"color\":\"#1F2225 #F4F4F4\",\"backdrop\":\"#def1e8 #def1e8\",\"theme-id\":\"93B1678D-2E9B-40FC-ABCD-05E051432252\",\"card-assets\":\"none\",\"font-family\":\"system\",\"page-width-type\":\"true\",\"separator-style\":\"line\",\"background-color\":\"#FFFFFF #222222\"}",
+      "updated": 1749799633553
+    },
+    {
+      "id": "CB37612A-ECFF-402A-9808-1B8A2E47D2BA",
+      "documentId": "AF8CB7DE-9A98-442D-95DF-86573F4ACE0A",
+      "content": "在使用场景上，Invoke方法会拖延线程直到执行完指定代码，如果需要暂停异步操作，直到用户提供反馈信息，可使用Invoke，比如指定代码弹出YES/NO对话框，需要根据用户反馈以进一步执行操作的场景。",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687575524220,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":1,\"listStyle\":\"numbered\",\"textStyle\":\"body\",\"userDefinedListNumber\":3}",
+      "blocks": [],
+      "updated": 1687575524220
+    },
+    {
+      "id": "DDED598E-57D9-43A6-9A51-EBFB54C52973",
+      "documentId": "AF8CB7DE-9A98-442D-95DF-86573F4ACE0A",
+      "content": "代码示例：",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687575524221,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1687575524221
+    },
+    {
+      "id": "DEFEB2A4-46DF-4CB1-B98D-552E28909B2F",
+      "documentId": "AF8CB7DE-9A98-442D-95DF-86573F4ACE0A",
+      "content": "Invoke是同步更新，会阻塞所在工作者线程，BeginInvoke是异步更新，不会阻塞当前线程。",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687575524219,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":1,\"listStyle\":\"numbered\",\"textStyle\":\"body\",\"userDefinedListNumber\":1}",
+      "blocks": [],
+      "updated": 1687575524219
+    },
+    {
+      "id": "F41C30C9-DCD8-4A87-ADA5-7F7B5E9C6657",
+      "documentId": "AF8CB7DE-9A98-442D-95DF-86573F4ACE0A",
+      "content": "不同点：",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687575524218,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\",\"userDefinedListNumber\":1}",
+      "blocks": [],
+      "updated": 1687575524218
+    }
+  ],
+  "inheritedPageStyle": {
+    "pageWidthType": "true",
+    "background": {
+      "size": "full",
+      "solidColor": "#def1e8",
+      "type": "solid"
+    },
+    "styleId": "luki",
+    "header": {}
+  },
+  "inheritedPageStyleProps": {
+    "color": "#1F2225 #F4F4F4",
+    "backdrop": "#def1e8 #def1e8",
+    "theme-id": "93B1678D-2E9B-40FC-ABCD-05E051432252",
+    "card-assets": "none",
+    "font-family": "system",
+    "page-width-type": "true",
+    "separator-style": "line",
+    "background-color": "#FFFFFF #222222"
+  },
+  "rootBlockId": "862746C5-1D8E-4352-B692-403182920FE1",
+  "settings": {
+    "documentAppearance": "default",
+    "hiddenLogo": false,
+    "freeTier": false,
+    "teamId": "e5336d46-6f5f-1acd-7266-4d0fefce8055",
+    "forceSwitches": {}
+  },
+  "features": {
+    "enabled": [
+      "fs-show-title",
+      "fs-enable-column-view"
+    ],
+    "disabled": [
+      "fs-add-comment",
+      "fs-view-comment",
+      "fs-object-links",
+      "fs-show-author",
+      "fs-show-custom-logo",
+      "fs-show-duplicate-as-template",
+      "fs-hide-logo",
+      "fs-hide-table-of-contents",
+      "fs-hide-presentation-mode"
+    ]
+  }
+}

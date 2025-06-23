@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "1",
+  "spaceId": "00be9a3c-07c6-267d-eb0e-2c13078f3c6a",
+  "documentId": "F4C5D140-537F-472B-BD86-FA5C31501588",
+  "blocks": [
+    {
+      "id": "0A215836-03D0-4F90-BBD9-EBA366336BF5",
+      "documentId": "F4C5D140-537F-472B-BD86-FA5C31501588",
+      "content": "npm i markdown-it-checkbox\nnpm i markdown-it-imsize\nnpm i markdown-it-expandable",
+      "rawProperties": "{\"language\":\"other\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749125898858,
+      "type": "code",
+      "style": "{\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749125898858
+    },
+    {
+      "id": "37519EE9-EC49-4141-96C7-9F6131A79F63",
+      "documentId": "F4C5D140-537F-472B-BD86-FA5C31501588",
+      "content": "hexo更换markdown渲染器【Resource】",
+      "pageStyleData": "{\"background\":{\"size\":\"full\",\"solidColor\":\"#007558\",\"type\":\"solid\"},\"isMirrored\":true,\"pageWidthType\":\"true\",\"styleId\":\"luki\"}",
+      "rawProperties": "{\"coverImageEnabled\":\"false\",\"hasBeenPagifiedBefore\":\"1\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749125887211,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"pageRegular\"}",
+      "blocks": [
+        "F73E56E8-E5F4-46E5-BAE9-066715CA19B1",
+        "4B5D6124-4A86-4ACB-9285-DBE7309A20F6",
+        "9DFE4E5C-7FA3-4AF0-BBE9-4C68AF320E41",
+        "B2953620-B876-456E-9570-D58341150073",
+        "A0069635-483A-47DE-A35F-D77ED1993369",
+        "0A215836-03D0-4F90-BBD9-EBA366336BF5",
+        "5B6EC514-6A45-4262-811D-CCCF57C9D7E2",
+        "9EB61A57-1563-4CC1-9FF6-8CD5E7649AB4"
+      ],
+      "pageStyleProps": "{\"color\":\"#00664D #D6FFF5\",\"backdrop\":\"#007558 #007558\",\"theme-id\":\"3115322C-BA8B-454C-B981-EE7CC48F7110\",\"card-assets\":\"#007558 #007558\",\"font-family\":\"system\",\"page-width-type\":\"true\",\"separator-style\":\"line\",\"background-color\":\"#CBF1E8 #00503C\"}",
+      "updated": 1749800359158
+    },
+    {
+      "id": "4B5D6124-4A86-4ACB-9285-DBE7309A20F6",
+      "documentId": "F4C5D140-537F-472B-BD86-FA5C31501588",
+      "content": "npm un hexo-renderer-marked --save",
+      "rawProperties": "{\"language\":\"other\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749125898857,
+      "type": "code",
+      "style": "{\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749125898857
+    },
+    {
+      "id": "5B6EC514-6A45-4262-811D-CCCF57C9D7E2",
+      "documentId": "F4C5D140-537F-472B-BD86-FA5C31501588",
+      "content": "butterfly主题报错:extends includes/layout.pug block content include ./includes/mixins/post-ui.pug #recent-posts.recent-posts +postUI include includes/pagination.pug，则需要安装",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749125898858,
+      "type": "text",
+      "style": "{\"_runAttributes\":[{\"isBold\":true,\"isCode\":false,\"isItalic\":false,\"isStrikethrough\":false,\"range\":[0,9]}],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\",\"userDefinedListNumber\":4}",
+      "blocks": [],
+      "updated": 1749125939778
+    },
+    {
+      "id": "9DFE4E5C-7FA3-4AF0-BBE9-4C68AF320E41",
+      "documentId": "F4C5D140-537F-472B-BD86-FA5C31501588",
+      "content": "再安装新的",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749125898857,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\",\"userDefinedListNumber\":2}",
+      "blocks": [],
+      "updated": 1749125932462
+    },
+    {
+      "id": "9EB61A57-1563-4CC1-9FF6-8CD5E7649AB4",
+      "documentId": "F4C5D140-537F-472B-BD86-FA5C31501588",
+      "content": "npm install hexo-renderer-pug hexo-renderer-stylus",
+      "rawProperties": "{\"language\":\"other\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749125898858,
+      "type": "code",
+      "style": "{\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749125898858
+    },
+    {
+      "id": "A0069635-483A-47DE-A35F-D77ED1993369",
+      "documentId": "F4C5D140-537F-472B-BD86-FA5C31501588",
+      "content": "最后安装新的渲染器的依赖",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749125898858,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\",\"userDefinedListNumber\":3}",
+      "blocks": [],
+      "updated": 1749125936270
+    },
+    {
+      "id": "B2953620-B876-456E-9570-D58341150073",
+      "documentId": "F4C5D140-537F-472B-BD86-FA5C31501588",
+      "content": "npm i hexo-renderer-markdown-it-plus --save",
+      "rawProperties": "{\"language\":\"other\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749125898858,
+      "type": "code",
+      "style": "{\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749125898858
+    },
+    {
+      "id": "F73E56E8-E5F4-46E5-BAE9-066715CA19B1",
+      "documentId": "F4C5D140-537F-472B-BD86-FA5C31501588",
+      "content": "先卸载原来的，默认的为“hexo-renderer-marked”",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749125898856,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749125898856
+    }
+  ],
+  "inheritedPageStyle": {
+    "pageWidthType": "true",
+    "background": {
+      "size": "full",
+      "solidColor": "#007558",
+      "type": "solid"
+    },
+    "styleId": "luki",
+    "header": {}
+  },
+  "inheritedPageStyleProps": {
+    "color": "#00664D #D6FFF5",
+    "backdrop": "#007558 #007558",
+    "theme-id": "3115322C-BA8B-454C-B981-EE7CC48F7110",
+    "card-assets": "#007558 #007558",
+    "font-family": "system",
+    "page-width-type": "true",
+    "separator-style": "line",
+    "background-color": "#CBF1E8 #00503C"
+  },
+  "rootBlockId": "37519EE9-EC49-4141-96C7-9F6131A79F63",
+  "settings": {
+    "documentAppearance": "default",
+    "hiddenLogo": false,
+    "freeTier": false,
+    "teamId": "e5336d46-6f5f-1acd-7266-4d0fefce8055",
+    "forceSwitches": {}
+  },
+  "features": {
+    "enabled": [
+      "fs-show-title",
+      "fs-enable-column-view"
+    ],
+    "disabled": [
+      "fs-add-comment",
+      "fs-view-comment",
+      "fs-object-links",
+      "fs-show-author",
+      "fs-show-custom-logo",
+      "fs-show-duplicate-as-template",
+      "fs-hide-logo",
+      "fs-hide-table-of-contents",
+      "fs-hide-presentation-mode"
+    ]
+  }
+}

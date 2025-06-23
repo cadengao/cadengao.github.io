@@ -1,0 +1,166 @@
+{
+  "schemaVersion": "1",
+  "spaceId": "00be9a3c-07c6-267d-eb0e-2c13078f3c6a",
+  "documentId": "ED5CA2A0-F2DA-4BE4-B7B2-4C2085399361",
+  "blocks": [
+    {
+      "id": "033F418C-D58B-4C0C-BDE3-AB85C137ECE9",
+      "documentId": "ED5CA2A0-F2DA-4BE4-B7B2-4C2085399361",
+      "content": "https://secure-res.craft.do/v2/9tfkJ99dzPbDEBvQcWhkoMwg8M64SVAdvw6G4W8n1LuSvcEHZocdvLdYYJri4JhRABAcg6BLoSoKjvYUiwk4kvj9UFd1UcTKyiPR9NqLGXJ1P4yEFgaXx5ecY8ztGxAFEEDhSBFEyZrW97eNQcX9pBLKwXZuQoWSxG3m15pvy6X31i2iYHNAFiXznjY9ZCXGp4RxAdHdXUmXyJa2VQzZfUkx49HLQAD8EKNwfF4UbvLmUVsAkpe4MwHYnt6we4E7UUw685ETzY3YcRVQ9eLgGWun8KXN336ao79ao7Y5fXqBHqxPX8",
+      "rawProperties": "{\"aspectRatio\":\"1.014115092290988\",\"fileExtension\":\"png\",\"fileName\":\"Image.png\",\"isPreviewImageUploaded\":\"true\",\"mimeType\":\"image/png\",\"previewImageWidth\":\"934.0\",\"primaryColor\":\"1664858\",\"rawDataSize\":\"364749\",\"rawUrl\":\"https://secure-res.craft.do/v2/9tfkJ99dzPbDEBvQcWhkoMwg8M64SVAdvw6G4W8n1LuTARTqr6browdyrgNtWLqi5FXSvudWZsrLN6H8V1ykUbYPhm3xyfaHExf32LAHv1F48Lp61rJiiMAvRtvsmQKCSNeBrWUv1NkxBkHz6tzbW88Z5gVKW3frph2jZEqpmvjD93dMvuv6LfDQrmN4Kubo2qYeXUdAsztr6J2GPpnCNDuFou6f24gC55qMzLK7xN8CikogxLQwPTJ2xPGHXsc7JVJFriHq5rgbZb3qfDVH5QxA2w4KGqLxWcsLcYYgGdHBjhoqpk/Image.jpg\",\"uploaded\":\"true\",\"url\":\"https://secure-res.craft.do/v2/9tfkJ99dzPbDEBvQcWhkoMwg8M64SVAdvw6G4W8n1LuSvcEHZocdvLdYYJri4JhRABAcg6BLoSoKjvYUiwk4kvj9UFd1UcTKyiPR9NqLGXJ1P4yEFgaXx5ecY8ztGxAFEEDhSBFEyZrW97eNQcX9pBLKwXZuQoWSxG3m15pvy6X31i2iYHNAFiXznjY9ZCXGp4RxAdHdXUmXyJa2VQzZfUkx49HLQAD8EKNwfF4UbvLmUVsAkpe4MwHYnt6we4E7UUw685ETzY3YcRVQ9eLgGWun8KXN336ao79ao7Y5fXqBHqxPX8/Image.jpg\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126905691,
+      "type": "image",
+      "style": "{\"decorationStyles\":{},\"decorations\":{},\"imageFillStyle\":\"scaleAspectFill\",\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749126908738
+    },
+    {
+      "id": "245EFB09-2C8D-418F-85E6-18A015BDE304",
+      "documentId": "ED5CA2A0-F2DA-4BE4-B7B2-4C2085399361",
+      "content": "下载并安装node.js，官网地址：Node.js — 在任何地方运行 JavaScript (nodejs.org)",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126876024,
+      "type": "text",
+      "style": "{\"_runAttributes\":[{\"linkURL\":\"https://nodejs.org/zh-cn\",\"range\":[18,41]}],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749126876024
+    },
+    {
+      "id": "787F61EA-0392-4DF7-85C6-4A3A6191E3BF",
+      "documentId": "ED5CA2A0-F2DA-4BE4-B7B2-4C2085399361",
+      "content": "https://secure-res.craft.do/v2/9tfkJ99dzPbDEBvQcWhkoMwg8M64SVAdvw6G4W8n1LuSvcEHZocdvLdYYJri4JhRABAcg6BLoSoKjvYUiwk4kvj9UFd1UcTKyiPR9NqLGXJ1P4yEFgaXx5ecY8ztGxAFEEDhSBFEyZrW97eNQcX9pBLKwukrPnPS4d7gWhA8UwTDWUxmKDkPtuKhwjgq2V4nQCWKnEmRS3DtqqZCUNwJsE9czGGmf3mJz9otX4JvgnZWFYpTHDB8zw7BtnH6metDweADUoLewarHCzSJdm41156bvPSML3CxkSYbyNTnEHRJRXj1Jn",
+      "rawProperties": "{\"aspectRatio\":\"2.5974025974025974\",\"fileExtension\":\"png\",\"fileName\":\"Image.png\",\"isPreviewImageUploaded\":\"true\",\"mimeType\":\"image/png\",\"previewImageWidth\":\"1200.0\",\"primaryColor\":\"922141\",\"rawDataSize\":\"397673\",\"rawUrl\":\"https://secure-res.craft.do/v2/9tfkJ99dzPbDEBvQcWhkoMwg8M64SVAdvw6G4W8n1LuTARTqr6browdyrgNtWLqi5FXSvudWZsrLN6H8V1ykUbYPhm3xyfaHExf32LAHv1F48Lp61rJiiMAvRtvsmQKCSNeBrWUv1NkxBkHz6tzbW88Z69aGNQB7eGrzg9N4QaWsjPQ1DQRvQANK6HnxjdksrZHcDrcqc4nqeS5cgd1akMFRL2q6BBoYeEaP1DxuDNCyBsCc9XMPrynSaVF7Zf76mwidEC4hKr6PrgDS34dPv73EGkdgrkNo484Z7WYwFRa7EGijjf/Image.jpg\",\"uploaded\":\"true\",\"url\":\"https://secure-res.craft.do/v2/9tfkJ99dzPbDEBvQcWhkoMwg8M64SVAdvw6G4W8n1LuSvcEHZocdvLdYYJri4JhRABAcg6BLoSoKjvYUiwk4kvj9UFd1UcTKyiPR9NqLGXJ1P4yEFgaXx5ecY8ztGxAFEEDhSBFEyZrW97eNQcX9pBLKwukrPnPS4d7gWhA8UwTDWUxmKDkPtuKhwjgq2V4nQCWKnEmRS3DtqqZCUNwJsE9czGGmf3mJz9otX4JvgnZWFYpTHDB8zw7BtnH6metDweADUoLewarHCzSJdm41156bvPSML3CxkSYbyNTnEHRJRXj1Jn/Image.jpg\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126892963,
+      "type": "image",
+      "style": "{\"decorationStyles\":{},\"decorations\":{},\"imageFillStyle\":\"scaleAspectFill\",\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749126896716
+    },
+    {
+      "id": "7F63D92A-BC02-4BE1-AB50-6EE3BD88DF52",
+      "documentId": "ED5CA2A0-F2DA-4BE4-B7B2-4C2085399361",
+      "content": "//1.检查node-v是否安装成功，成功后会提示v20.16.0\nnode -v\n//2.安装cnpm -g就是全局安装\nnpm install -g cnpm --registry=https://registry.npmmirror.com  # -g就是全局安装\n//3.安装hexo\ncnpm install -g hexo-cli\n//4.检查hexo是否安装成功\nhexo -v",
+      "rawProperties": "{\"language\":\"other\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126876025,
+      "type": "code",
+      "style": "{\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749126876025
+    },
+    {
+      "id": "C0E5EEC4-B19C-4571-A6BE-4BF920B97663",
+      "documentId": "ED5CA2A0-F2DA-4BE4-B7B2-4C2085399361",
+      "content": "下载并安装git，官网地址：Git - Downloads (git-scm.com)",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126876025,
+      "type": "text",
+      "style": "{\"_runAttributes\":[{\"isBold\":false,\"isCode\":false,\"isItalic\":false,\"isStrikethrough\":false,\"linkURL\":\"https://git-scm.com/downloads\",\"range\":[14,29]}],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\",\"userDefinedListNumber\":2}",
+      "blocks": [],
+      "updated": 1749126912303
+    },
+    {
+      "id": "CD92BC78-0117-4CD9-A7BF-57619AF6920E",
+      "documentId": "ED5CA2A0-F2DA-4BE4-B7B2-4C2085399361",
+      "content": "用管理员打开cmd，执行",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126876025,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749126876025
+    },
+    {
+      "id": "D5C1B1EC-34FE-40EC-A188-629F60C8F2F2",
+      "documentId": "ED5CA2A0-F2DA-4BE4-B7B2-4C2085399361",
+      "content": "",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126874932,
+      "type": "text",
+      "style": "{\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1749126874933
+    },
+    {
+      "id": "F5EA01A1-8940-40B3-91DD-F0874D9B0E28",
+      "documentId": "ED5CA2A0-F2DA-4BE4-B7B2-4C2085399361",
+      "content": "windows部署hexo【Resource】",
+      "pageStyleData": "{\"background\":{\"size\":\"full\",\"solidColor\":\"#007558\",\"type\":\"solid\"},\"isMirrored\":true,\"pageWidthType\":\"true\",\"styleId\":\"luki\"}",
+      "rawProperties": "{\"coverImageEnabled\":\"false\",\"hasBeenPagifiedBefore\":\"1\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1749126861226,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"pageRegular\"}",
+      "blocks": [
+        "245EFB09-2C8D-418F-85E6-18A015BDE304",
+        "787F61EA-0392-4DF7-85C6-4A3A6191E3BF",
+        "033F418C-D58B-4C0C-BDE3-AB85C137ECE9",
+        "C0E5EEC4-B19C-4571-A6BE-4BF920B97663",
+        "CD92BC78-0117-4CD9-A7BF-57619AF6920E",
+        "7F63D92A-BC02-4BE1-AB50-6EE3BD88DF52",
+        "D5C1B1EC-34FE-40EC-A188-629F60C8F2F2"
+      ],
+      "pageStyleProps": "{\"color\":\"#00664D #D6FFF5\",\"backdrop\":\"#007558 #007558\",\"theme-id\":\"3115322C-BA8B-454C-B981-EE7CC48F7110\",\"card-assets\":\"#007558 #007558\",\"font-family\":\"system\",\"page-width-type\":\"true\",\"separator-style\":\"line\",\"background-color\":\"#CBF1E8 #00503C\"}",
+      "updated": 1749800375577
+    }
+  ],
+  "inheritedPageStyle": {
+    "pageWidthType": "true",
+    "background": {
+      "size": "full",
+      "solidColor": "#007558",
+      "type": "solid"
+    },
+    "styleId": "luki",
+    "header": {}
+  },
+  "inheritedPageStyleProps": {
+    "color": "#00664D #D6FFF5",
+    "backdrop": "#007558 #007558",
+    "theme-id": "3115322C-BA8B-454C-B981-EE7CC48F7110",
+    "card-assets": "#007558 #007558",
+    "font-family": "system",
+    "page-width-type": "true",
+    "separator-style": "line",
+    "background-color": "#CBF1E8 #00503C"
+  },
+  "rootBlockId": "F5EA01A1-8940-40B3-91DD-F0874D9B0E28",
+  "settings": {
+    "documentAppearance": "default",
+    "hiddenLogo": false,
+    "freeTier": false,
+    "teamId": "e5336d46-6f5f-1acd-7266-4d0fefce8055",
+    "forceSwitches": {}
+  },
+  "features": {
+    "enabled": [
+      "fs-show-title",
+      "fs-enable-column-view"
+    ],
+    "disabled": [
+      "fs-add-comment",
+      "fs-view-comment",
+      "fs-object-links",
+      "fs-show-author",
+      "fs-show-custom-logo",
+      "fs-show-duplicate-as-template",
+      "fs-hide-logo",
+      "fs-hide-table-of-contents",
+      "fs-hide-presentation-mode"
+    ]
+  }
+}

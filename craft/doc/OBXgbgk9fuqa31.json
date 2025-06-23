@@ -1,0 +1,140 @@
+{
+  "schemaVersion": "1",
+  "spaceId": "d8d537f0-b7d4-e6fe-0216-30e666a82048",
+  "documentId": "8E02B2F9-0332-4DFD-A08B-912096BCE7B7",
+  "blocks": [
+    {
+      "id": "59938D8E-D288-43E2-BE1F-87C99E288246",
+      "documentId": "8E02B2F9-0332-4DFD-A08B-912096BCE7B7",
+      "content": "namespace WpfApp1\n{\n    public class MainViewModel:INotifyPropertyChanged\n    {\n        public MyCommand ShowCommand { get; set; }\n\n        public event PropertyChangedEventHandler PropertyChanged;\n\n        public string Name\n        {\n            get { return name; }\n            set { \n\t\t    name = value;\n                    //通知客户端内容更改的方式一种\n                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(\"Name\")); \n                }\n        }\n\n        public string name;\n        public MainViewModel()\n        {\n            Name = \"Hello World\";\n            ShowCommand = new MyCommand(Show);\n        }\n\n        public void Show()\n        {\n            Name = \"点击了Button\";\n            MessageBox.Show(Name);\n        }\n    }\n}",
+      "rawProperties": "{\"language\":\"cs\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687575239581,
+      "type": "code",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "pluginData": "{\"horizontalSizeClass\":\"regular\",\"pluginConfigurationData\":\"{\\\"themeId\\\":\\\"\\\"}\",\"pluginName\":\"codeBlock\",\"surfaceShadowOpacity\":0,\"verticalSizeClass\":\"regular\"}",
+      "updated": 1687575251279
+    },
+    {
+      "id": "5EF4DC0A-8363-44AF-8CC9-6C011FCD1BF3",
+      "documentId": "8E02B2F9-0332-4DFD-A08B-912096BCE7B7",
+      "content": "简单方式-在赋值的时候调用PropertyChanged",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687575239580,
+      "type": "text",
+      "style": "{\"_runAttributes\":[{\"highlightColor\":\"#ff7100 #ff6656;#f300ad #ff87b2;g\",\"isBold\":false,\"isCode\":false,\"isItalic\":false,\"isStrikethrough\":false,\"range\":[5,23]},{\"isBold\":true,\"isCode\":false,\"isItalic\":false,\"isStrikethrough\":false,\"range\":[0,28]}],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\",\"userDefinedListNumber\":1}",
+      "blocks": [],
+      "updated": 1749114463533
+    },
+    {
+      "id": "86C13512-BCB7-4624-8695-272151E82A20",
+      "documentId": "8E02B2F9-0332-4DFD-A08B-912096BCE7B7",
+      "content": "namespace WpfApp1\n{\n    public class MainViewModel:INotifyPropertyChanged\n    {\n        public MyCommand ShowCommand { get; set; }\n\n        public event PropertyChangedEventHandler PropertyChanged;\n\n        public void OnPropertyChanged([CallerMemberName]string propertyName=\"\")\n        {\n            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));\n        }\n\n        public string Name\n        {\n            get { return name; }\n            set { \n                    name = value;\n                    //通知客户端内容更改的方式一种\n                    OnPropertyChanged();\n                }\n        }\n\n        public string name;\n\n        public MainViewModel()\n        {\n            Name = \"Hello World\";\n            ShowCommand = new MyCommand(Show);\n        }\n\n\n        public void Show()\n        {\n            Name = \"点击了Button\";\n            MessageBox.Show(Name);\n\n        }\n    }\n}",
+      "rawProperties": "{\"language\":\"cs\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687575239582,
+      "type": "code",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "pluginData": "{\"horizontalSizeClass\":\"regular\",\"pluginConfigurationData\":\"{\\\"themeId\\\":\\\"\\\"}\",\"pluginName\":\"codeBlock\",\"surfaceShadowOpacity\":0,\"verticalSizeClass\":\"regular\"}",
+      "updated": 1687575256116
+    },
+    {
+      "id": "CAE63A6D-F14C-471C-9EA0-F37B3909BCA9",
+      "documentId": "8E02B2F9-0332-4DFD-A08B-912096BCE7B7",
+      "content": "WPF-通知更改INotifyPropertyChanged【Area】",
+      "pageStyleData": "{\"background\":{\"size\":\"full\",\"solidColor\":\"#def1e8\",\"type\":\"solid\"},\"isMirrored\":true,\"pageWidthType\":\"true\",\"styleId\":\"luki\"}",
+      "rawProperties": "{\"coverImageEnabled\":\"false\",\"hasBeenPagifiedBefore\":\"1\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687575237359,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"pageRegular\"}",
+      "blocks": [
+        "FFD22578-6F63-4936-A80F-1F65BE5F4260",
+        "5EF4DC0A-8363-44AF-8CC9-6C011FCD1BF3",
+        "59938D8E-D288-43E2-BE1F-87C99E288246",
+        "D6A0AB42-6983-4247-801F-2F9892786CD3",
+        "86C13512-BCB7-4624-8695-272151E82A20"
+      ],
+      "pageStyleProps": "{\"color\":\"#1F2225 #F4F4F4\",\"backdrop\":\"#def1e8 #def1e8\",\"theme-id\":\"93B1678D-2E9B-40FC-ABCD-05E051432252\",\"card-assets\":\"none\",\"font-family\":\"system\",\"page-width-type\":\"true\",\"separator-style\":\"line\",\"background-color\":\"#FFFFFF #222222\"}",
+      "updated": 1749799623164
+    },
+    {
+      "id": "D6A0AB42-6983-4247-801F-2F9892786CD3",
+      "documentId": "8E02B2F9-0332-4DFD-A08B-912096BCE7B7",
+      "content": "自动绑定-封装一个事件调用OnPropertyChanged",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687575239581,
+      "type": "text",
+      "style": "{\"_runAttributes\":[{\"highlightColor\":\"#ff7100 #ff6656;#f300ad #ff87b2;g\",\"isBold\":false,\"isCode\":false,\"isItalic\":false,\"isStrikethrough\":false,\"range\":[5,25]}],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\",\"userDefinedListNumber\":2}",
+      "blocks": [],
+      "updated": 1749114471689
+    },
+    {
+      "id": "FFD22578-6F63-4936-A80F-1F65BE5F4260",
+      "documentId": "8E02B2F9-0332-4DFD-A08B-912096BCE7B7",
+      "content": "有两种方式",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1687575239579,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorations\":{},\"decorationStyles\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1687575239579
+    }
+  ],
+  "inheritedPageStyle": {
+    "pageWidthType": "true",
+    "background": {
+      "size": "full",
+      "solidColor": "#def1e8",
+      "type": "solid"
+    },
+    "styleId": "luki",
+    "header": {}
+  },
+  "inheritedPageStyleProps": {
+    "color": "#1F2225 #F4F4F4",
+    "backdrop": "#def1e8 #def1e8",
+    "theme-id": "93B1678D-2E9B-40FC-ABCD-05E051432252",
+    "card-assets": "none",
+    "font-family": "system",
+    "page-width-type": "true",
+    "separator-style": "line",
+    "background-color": "#FFFFFF #222222"
+  },
+  "rootBlockId": "CAE63A6D-F14C-471C-9EA0-F37B3909BCA9",
+  "settings": {
+    "documentAppearance": "default",
+    "hiddenLogo": false,
+    "freeTier": false,
+    "teamId": "e5336d46-6f5f-1acd-7266-4d0fefce8055",
+    "forceSwitches": {}
+  },
+  "features": {
+    "enabled": [
+      "fs-show-title",
+      "fs-enable-column-view"
+    ],
+    "disabled": [
+      "fs-add-comment",
+      "fs-view-comment",
+      "fs-object-links",
+      "fs-show-author",
+      "fs-show-custom-logo",
+      "fs-show-duplicate-as-template",
+      "fs-hide-logo",
+      "fs-hide-table-of-contents",
+      "fs-hide-presentation-mode"
+    ]
+  }
+}

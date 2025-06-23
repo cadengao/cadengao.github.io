@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "1",
+  "spaceId": "d8d537f0-b7d4-e6fe-0216-30e666a82048",
+  "documentId": "615B5C33-4647-4239-93D9-3CF78434D9F4",
+  "blocks": [
+    {
+      "id": "241CEC5B-5E7E-4983-B606-D77D95BAFB8A",
+      "documentId": "615B5C33-4647-4239-93D9-3CF78434D9F4",
+      "content": "先定义通用的类CommonHub",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1750054872247,
+      "type": "text",
+      "style": "{\"_runAttributes\":[{\"isBold\":false,\"isCode\":true,\"isItalic\":false,\"isStrikethrough\":false,\"range\":[7,9]}],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1750056309055
+    },
+    {
+      "id": "4E5A9FFF-EC30-4BB2-BA26-07A62F57694C",
+      "documentId": "615B5C33-4647-4239-93D9-3CF78434D9F4",
+      "content": "public class CommonHub : Hub\n{\n    // 客户端调用此方法加入指定的组\n    public void JoinGroup(string groupName)\n    {\n        Groups.Add(Context.ConnectionId, groupName);\n    }\n\n    // 客户端调用此方法离开指定的组\n    public void LeaveGroup(string groupName)\n    {\n        Groups.Remove(Context.ConnectionId, groupName);\n    }\n\n    // 向指定组的所有客户端发送通知\n    public static void NotifyGroup(string groupName, object parameters = null)\n    {\n        var context = GlobalHost.ConnectionManager.GetHubContext<CommonHub>();\n        context.Clients.Group(groupName).handleServerEvent(parameters);\n    }\n}",
+      "rawProperties": "{\"language\":\"cs\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1750055187050,
+      "type": "code",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":1,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "pluginData": "{\"horizontalSizeClass\":\"regular\",\"pluginConfigurationData\":\"{\\\"themeId\\\":\\\"auto\\\"}\",\"pluginName\":\"codeBlock\",\"surfaceShadowOpacity\":0,\"verticalSizeClass\":\"regular\"}",
+      "updated": 1750055301979
+    },
+    {
+      "id": "651D7CCD-BE64-4027-BC06-D377B5098A6B",
+      "documentId": "615B5C33-4647-4239-93D9-3CF78434D9F4",
+      "content": "//1.不带参数\nCommonHub.NotifyGroup(\"PdaPackGroup\");\n//2.带参数\nCommonHub.NotifyGroup(\"ReceiptModifyGroup\", new\n{\n    title = \"title\",\n    content = \"content\"\n});",
+      "rawProperties": "{\"language\":\"cs\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1750055664747,
+      "type": "code",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":1,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "pluginData": "{\"horizontalSizeClass\":\"regular\",\"pluginConfigurationData\":\"{\\\"themeId\\\":\\\"auto\\\"}\",\"pluginName\":\"codeBlock\",\"surfaceShadowOpacity\":0,\"verticalSizeClass\":\"regular\"}",
+      "updated": 1750056228247
+    },
+    {
+      "id": "7E4CA851-E78F-48AF-BDCA-2A8DE55D9983",
+      "documentId": "615B5C33-4647-4239-93D9-3CF78434D9F4",
+      "content": "页面后台代码调用",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1750055649842,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1750055664003
+    },
+    {
+      "id": "B1FCDECF-7B48-4515-9BAF-49DE1FFB6D75",
+      "documentId": "615B5C33-4647-4239-93D9-3CF78434D9F4",
+      "content": "SignalR的使用【Area】",
+      "pageStyleData": "{\"background\":{\"size\":\"full\",\"solidColor\":\"#f7f9f7\",\"type\":\"solid\"},\"isMirrored\":true,\"pageWidthType\":\"true\",\"styleId\":\"luki\"}",
+      "rawProperties": "{\"coverImageEnabled\":\"false\",\"hasBeenPagifiedBefore\":\"1\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1750054861071,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"none\",\"textStyle\":\"pageRegular\"}",
+      "blocks": [
+        "241CEC5B-5E7E-4983-B606-D77D95BAFB8A",
+        "4E5A9FFF-EC30-4BB2-BA26-07A62F57694C",
+        "F6352AFA-036C-4A25-94AF-925C42998F16",
+        "B60A3E64-383E-4AC5-8B2C-54629F6CD2F3",
+        "7E4CA851-E78F-48AF-BDCA-2A8DE55D9983",
+        "651D7CCD-BE64-4027-BC06-D377B5098A6B"
+      ],
+      "pageStyleProps": "{\"color\":\"#1F2225 #F4F4F4\",\"backdrop\":\"#f7f9f7 #f7f9f7\",\"theme-id\":\"3C07060B-6733-42A8-B033-C8EC0A19272D\",\"card-assets\":\"none\",\"font-family\":\"system\",\"page-width-type\":\"true\",\"separator-style\":\"line\",\"background-color\":\"#FFFFFF #222222\"}",
+      "updated": 1750335532917
+    },
+    {
+      "id": "B60A3E64-383E-4AC5-8B2C-54629F6CD2F3",
+      "documentId": "615B5C33-4647-4239-93D9-3CF78434D9F4",
+      "content": "<script src=\"Scripts/jquery.signalR-2.4.1.min.js\"></script>\n<script src=\"signalr/hubs\"></script>\n\n<script type=\"text/javascript\">\n    $(function () {\n        // Declare a proxy to reference the hub. \n        var hub = $.connection.commonHub;\n        hub.client.handleServerEvent = function (parameters) {\n            //1.不带参数\n            console.log(\"SignalR.PdaPackGroup 已收到handleServerEvent\");\n            //2.如果有参数的话\n            if (parameters && parameters.title && parameters.content) {\n                console.log(\"SignalR.ReceiptModifyGroup 已收到handleServerEvent\");\n            }\n        };\n\n        // Start the connection.\n        $.connection.hub.start().done(function () {\n            hub.server.joinGroup(\"PdaPackGroup\"); // 加入指定的组\n        });\n    });\n</script>",
+      "rawProperties": "{\"language\":\"javascript\"}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1750055693220,
+      "type": "code",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":1,\"listStyle\":\"none\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "pluginData": "{\"horizontalSizeClass\":\"regular\",\"pluginConfigurationData\":\"{\\\"themeId\\\":\\\"auto\\\"}\",\"pluginName\":\"codeBlock\",\"surfaceShadowOpacity\":0,\"verticalSizeClass\":\"regular\"}",
+      "updated": 1750056275850
+    },
+    {
+      "id": "F6352AFA-036C-4A25-94AF-925C42998F16",
+      "documentId": "615B5C33-4647-4239-93D9-3CF78434D9F4",
+      "content": "页面前端代码",
+      "rawProperties": "{}",
+      "createdByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "modifiedByUserId": "ff47392e-1b37-dd92-268a-2c80735d18e1",
+      "created": 1750055153641,
+      "type": "text",
+      "style": "{\"_runAttributes\":[],\"decorationStyles\":{},\"decorations\":{},\"indentationLevel\":0,\"listStyle\":\"numbered\",\"textStyle\":\"body\"}",
+      "blocks": [],
+      "updated": 1750055692605
+    }
+  ],
+  "inheritedPageStyle": {
+    "pageWidthType": "true",
+    "background": {
+      "size": "full",
+      "solidColor": "#f7f9f7",
+      "type": "solid"
+    },
+    "styleId": "luki",
+    "header": {}
+  },
+  "inheritedPageStyleProps": {
+    "color": "#1F2225 #F4F4F4",
+    "backdrop": "#f7f9f7 #f7f9f7",
+    "theme-id": "3C07060B-6733-42A8-B033-C8EC0A19272D",
+    "card-assets": "none",
+    "font-family": "system",
+    "page-width-type": "true",
+    "separator-style": "line",
+    "background-color": "#FFFFFF #222222"
+  },
+  "rootBlockId": "B1FCDECF-7B48-4515-9BAF-49DE1FFB6D75",
+  "settings": {
+    "documentAppearance": "default",
+    "hiddenLogo": false,
+    "freeTier": false,
+    "teamId": "e5336d46-6f5f-1acd-7266-4d0fefce8055",
+    "forceSwitches": {}
+  },
+  "features": {
+    "enabled": [
+      "fs-show-title",
+      "fs-enable-column-view"
+    ],
+    "disabled": [
+      "fs-add-comment",
+      "fs-view-comment",
+      "fs-object-links",
+      "fs-show-author",
+      "fs-show-custom-logo",
+      "fs-show-duplicate-as-template",
+      "fs-hide-logo",
+      "fs-hide-table-of-contents",
+      "fs-hide-presentation-mode"
+    ]
+  }
+}
