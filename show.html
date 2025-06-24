@@ -190,16 +190,16 @@
     <div class="container">
         <div class="header">
             <h1>小高的知识库-数据下载工具</h1>
-            <p>从Craft获取数据并支持单个/批量下载功能</p>
+            <p>从云端获取数据并支持单个/批量下载功能</p>
         </div>
 
         <div class="card">
             <div class="controls">
                 <button id="saveHomeBtn" class="btn">
-                    <span class="save-text">保存主页数据 (home.json)</span>
+                    <span class="save-text">保存主页</span>
                 </button>
                 <button id="downloadAllBtn" class="btn btn-secondary">
-                    <span class="batch-text">批量下载所有UUID数据 (ZIP)</span>
+                    <span class="batch-text">批量下载所有文章(ZIP)</span>
                 </button>
             </div>
 
@@ -212,6 +212,7 @@
                             <th>标题</th>
                             <th>UUID</th>
                             <th>类型</th>
+                            <th>标签</th>
                             <th>受保护</th>
                             <th>操作</th>
                         </tr>
@@ -461,6 +462,11 @@
                 const typeCell = document.createElement('td');
                 typeCell.textContent = item.type || '';
                 row.appendChild(typeCell);
+
+                // 标签列
+                const tagsCell = document.createElement('td');
+                tagsCell.textContent = item.tags || '';
+                row.appendChild(tagsCell);
 
                 // 受保护状态列
                 const protectedCell = document.createElement('td');
