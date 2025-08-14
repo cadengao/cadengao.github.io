@@ -27,7 +27,7 @@ var RENDERER = {
 
   setParameters: function () {
     this.$window = $(window);
-    this.$container = $('#flyfish');
+    this.$container = $('#flyFish');
     this.$canvas = $('<canvas />');
     this.context = this.$canvas.appendTo(this.$container)[0].getContext('2d');
     this.points = [];
@@ -369,6 +369,18 @@ FISH.prototype = {
 };
 
 // 启动入口
-window.onload = function () {
-  RENDERER.init();
-};
+function initFish() {
+    if (!document.getElementById('flyFish')) {
+        return setTimeout(initFish, 100); // 每隔100ms检查一次
+    }
+
+    // 确保 jQuery 可用
+    if (window.$) {
+        RENDERER.init();
+    } else {
+        console.error('jQuery not loaded');
+    }
+}
+
+// 在 React 组件中调用
+window.initFishAnimation = initFish;
