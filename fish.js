@@ -8,14 +8,16 @@
 // SPRING_FRICTION: 0.9,     // 水面点运动的摩擦力系数
 // WAVE_SPREAD: 0.3,         // 波纹扩散的传递强度
 // GRAVITY: 0.4,             // 鱼脱离水面时的重力影响系数
+// FISH_SPEED_FACTOR: 0.5,   // 新增：鱼的速度系数（0.5表示减半）
 
 // ===== 美化并修复后的完整代码 =====
 var RENDERER = {
   POINT_INTERVAL: 5,
   FISH_COUNT: 6,
-  MAX_INTERVAL_COUNT: 50,
+  MAX_INTERVAL_COUNT: 10,
   INIT_HEIGHT_RATE: 0.5,
   THRESHOLD: 50,
+  FISH_SPEED_FACTOR: 0.5,
 
   init: function () {
     this.setParameters();
@@ -248,7 +250,6 @@ FISH.prototype = {
       -this.renderer.THRESHOLD;
     this.previousY = this.y;
     this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1);
-
     if (this.renderer.reverse) {
       this.y = this.getRandomValue(this.renderer.height * 0.1, this.renderer.height * 0.4);
       this.vy = this.getRandomValue(2, 5);
@@ -258,6 +259,12 @@ FISH.prototype = {
       this.vy = this.getRandomValue(-5, -2);
       this.ay = this.getRandomValue(-0.2, -0.05);
     }
+
+    var speedFactor = this.renderer.FISH_SPEED_FACTOR || 1;
+    this.vx *= speedFactor;
+    this.vy *= speedFactor;
+    this.ay *= speedFactor;
+
     this.isOut = false;
     this.theta = 0;
     this.phi = 0;
@@ -296,6 +303,10 @@ FISH.prototype = {
     if (!this.isOut) {
       this.theta = (this.theta + Math.PI / 20) % (Math.PI * 2);
       this.phi = (this.phi + Math.PI / 30) % (Math.PI * 2);
+
+      var speedFactor = this.renderer.FISH_SPEED_FACTOR || 1;
+      this.theta *= speedFactor;
+      this.phi *= speedFactor;
     }
 
     // 生成尾迹波纹
