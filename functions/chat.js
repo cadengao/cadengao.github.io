@@ -81,7 +81,8 @@ async function connectToDatabase() {
 
 		return db;
 	} catch (error) {
-		await logContentWithGet('❌ 连接 MongoDB 失败:', error,'--',error.message);
+		await logContentWithGet(`❌ 连接 MongoDB 失败: ${error.message}`);
+		await logContentWithGet(`❌ 错误堆栈: ${error.stack}`);
 
 		// 发生错误时清理缓存
 		cachedClient = null;
