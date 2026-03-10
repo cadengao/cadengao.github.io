@@ -193,6 +193,8 @@ exports.handler = async (event, context) => {
 			CreateTime,
 			MsgType
 		} = requestBody.xml;
+		await logContentWithGet('requestBody.xml',requestBody.xml)
+
 		if (!Content || !CreateTime || !MsgType) {
 			await logContentWithGet("!Content || !CreateTime || !MsgType")
 			return {
@@ -206,7 +208,7 @@ exports.handler = async (event, context) => {
 				}),
 			};
 		}
-		await logContentWithGet(Content, CreateTime ,MsgType)
+		await logContentWithGet('Content',Content, ',CreateTime',CreateTime ,',MsgType',MsgType)
 
 		// 转换时间戳为日期
 		const dateTime = new Date(CreateTime * 1000); // CreateTime 是 Unix 时间戳
@@ -274,7 +276,7 @@ exports.handler = async (event, context) => {
 				return response;
 			}
 		} catch (error) {
-			console.error('Database operation error:', error);
+			await logContentWithGet('Database operation error:', error);
 			return {
 				statusCode: 500,
 				headers: {
