@@ -174,7 +174,7 @@ exports.handler = async (event, context) => {
 			const parser = new xml2js.Parser();
 			requestBody = await parser.parseStringPromise(event.body);
 		} catch (error) {
-			console.error('Failed to parse XML:', error);
+			await logContentWithGet('Failed to parse XML:', error);
 			return {
 				statusCode: 400,
 				headers: {
@@ -193,8 +193,8 @@ exports.handler = async (event, context) => {
 			CreateTime,
 			MsgType
 		} = requestBody.xml;
-
 		if (!Content || !CreateTime || !MsgType) {
+			await logContentWithGet("!Content || !CreateTime || !MsgType")
 			return {
 				statusCode: 400,
 				headers: {
@@ -206,14 +206,16 @@ exports.handler = async (event, context) => {
 				}),
 			};
 		}
+		await logContentWithGet(Content, CreateTime ,MsgType)
 
 		// 转换时间戳为日期
 		const dateTime = new Date(CreateTime * 1000); // CreateTime 是 Unix 时间戳
 
 		try {
+			await logContentWithGet("3.post.",Content);
 			// 获取 MongoDB 集合
 			const chatDataCollection = await getChatDataCollection();
-			await logContentWithGet("3.post.",Content);
+			await logContentWithGet("3.post.-",Content);
 
 			// 检查 Content 值
 			if (Content[0] === connectionConfig.clearFlag) {
