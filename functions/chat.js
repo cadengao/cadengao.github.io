@@ -1,4 +1,4 @@
-const ServerApiVersion = require('mongodb');
+const {MongoClient,ServerApiVersion} = require('mongodb');
 const crypto = require('crypto');
 const xml2js = require('xml2js');
 const axios = require("axios");
