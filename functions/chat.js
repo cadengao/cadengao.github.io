@@ -89,8 +89,13 @@ async function connectToDatabase() {
  * 获取指定集合
  */
 async function getChatDataCollection() {
-	const db = await connectToDatabase();
-	return db.collection(connectionConfig.collectionName);
+	try {
+		const db = await connectToDatabase();
+		return db.collection(connectionConfig.collectionName);
+	}
+	catch (error) {
+		await logContentWithGet('getChatDataCollection',error);
+	}
 }
 
 /**
@@ -186,6 +191,7 @@ exports.handler = async (event, context) => {
 				}),
 			};
 		}
+		await logContentWithGet('requestBody', requestBody); // Log the raw request body
 
 		// 检查请求体中的必需字段
 		const {
