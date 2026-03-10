@@ -23,13 +23,13 @@ const connectionConfig = {
 
 // 验证必要环境变量
 if (!connectionConfig.wxToken) {
-	console.error('❌ 请设置 WX_TOKEN 环境变量');
+	await logContentWithGet('❌ 请设置 WX_TOKEN 环境变量');
 }
 if (!connectionConfig.clearFlag) {
-	console.error('❌ 请设置 CLEAR_FLAG 环境变量');
+	await logContentWithGet('❌ 请设置 CLEAR_FLAG 环境变量');
 }
 if (!connectionConfig.mongodbUri) {
-	throw new Error('❌ 请设置 MONGODB_URI 环境变量');
+	await logContentWithGet('❌ 请设置 MONGODB_URI 环境变量');
 }
 
 // =============== MongoDB 连接配置 ===============
@@ -76,7 +76,7 @@ async function connectToDatabase() {
 
 		return db;
 	} catch (error) {
-		console.error('❌ 连接 MongoDB 失败:', error);
+		await logContentWithGet('❌ 连接 MongoDB 失败:', error);
 
 		// 发生错误时清理缓存
 		cachedClient = null;
@@ -110,7 +110,7 @@ async function closeConnection() {
 			cachedDb = null;
 		}
 	} catch (error) {
-		console.error('关闭连接时出错:', error);
+		await logContentWithGet('关闭连接时出错:', error);
 	}
 }
 // =============== MongoDB 连接配置结束 ===============
@@ -278,7 +278,7 @@ exports.handler = async (event, context) => {
 						insertedCount: result.insertedCount
 					}),
 				};
-				//await logContentWithGet('Response:', response); // Log the response
+				await logContentWithGet('Response:', response); // Log the response
 				return response;
 			}
 		} catch (error) {
@@ -316,8 +316,9 @@ exports.handler = async (event, context) => {
 };
 
 // 检查签名是否正确
-function Check(signature, timestamp, nonce, token) {
-	return signature === GetSignature(timestamp, nonce, token);
+async function Check(signature, timestamp, nonce, token) {
+	const ret= signature === GetSignature(timestamp, nonce, token);
+	await logContentWithGet('signature, timestamp, nonce, token,ret,',signature, timestamp, nonce, token,ret)
 }
 
 // 返回正确的签名
