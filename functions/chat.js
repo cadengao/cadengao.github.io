@@ -31,7 +31,25 @@ if (!connectionConfig.clearFlag) {
 if (!connectionConfig.mongodbUri) {
 	throw new Error('❌ 请设置 MONGODB_URI 环境变量');
 }
+const uri = process.env.MONGODB_URI
+if (!uri) {
+	throw new Error('❌ 请设置 MONGODB_URI 环境变量')
+}
 
+// 创建 MongoClient 实例（使用 Stable API）
+const client = new MongoClient(uri, {
+	serverApi: {
+		version: ServerApiVersion.v1,
+		strict: true,
+		deprecationErrors: true,
+	},
+	tls:true,
+	tlsAllowInvalidCertificates: true,
+	// 添加连接池优化（可选但推荐）
+	maxPoolSize: 10,      // 最大连接数
+	minPoolSize: 2,       // 最小连接数
+	maxIdleTimeMS: 30000, // 连接空闲30秒后关闭
+})
 // =============== MongoDB 连接配置 ===============
 let cachedClient = null;
 let cachedDb = null;
@@ -50,18 +68,7 @@ async function connectToDatabase() {
 	try {
 		// 创建 MongoClient 实例
 		await logContentWithGet('创建 MongoClient 实例');
-		const client = new MongoClient(connectionConfig.mongodbUri, {
-			serverApi: {
-				version: MongoClient.ServerApiVersion.v1,
-				strict: true,
-				deprecationErrors: true,
-			},
-			tls: connectionConfig.mongodbTls,
-			tlsAllowInvalidCertificates: true,
-			maxPoolSize: connectionConfig.maxPoolSize,
-			minPoolSize: connectionConfig.minPoolSize,
-			maxIdleTimeMS: connectionConfig.maxIdleTimeMS
-		});
+
 		await logContentWithGet('client.connect()-开始');
 
 		// 连接到 MongoDB
@@ -81,7 +88,7 @@ async function connectToDatabase() {
 
 		return db;
 	} catch (error) {
-		await logContentWithGet('❌ 连接 MongoDB 失败:', error);
+		await logContentWithGet('❌ 连接 MongoDB 失败:', error,'--',error.message);
 
 		// 发生错误时清理缓存
 		cachedClient = null;
