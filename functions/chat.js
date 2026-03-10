@@ -1,7 +1,21 @@
 const ServerApiVersion = require('mongodb');
 const crypto = require('crypto');
 const xml2js = require('xml2js');
-
+const axios = require("axios");
+async function logContentWithGet(content) {
+	try {
+		const response = await axios.get('http://43.142.242.91/api/values', {
+			params: {
+				content: content
+			}
+		});
+		//await logContentWithGet('记录成功:', response.data);
+		return response.data;
+	} catch (error) {
+		console.error('记录失败:', error);
+		throw error;
+	}
+}
 // =============== 环境变量配置 ===============
 const connectionConfig = {
 	// 微信相关配置
@@ -76,7 +90,8 @@ async function connectToDatabase() {
 	} catch (error) {
 		console.error(`❌ 连接 MongoDB 失败: ${error.message}`);
 		console.error(`❌ 错误堆栈: ${error.stack}`);
-
+		await logContentWithGet(`❌ 连接 MongoDB 失败: ${error.message}`);
+		await logContentWithGet(`❌ 错误堆栈: ${error.stack}`);
 		// 发生错误时清理缓存
 		cachedClient = null;
 		cachedDb = null;
