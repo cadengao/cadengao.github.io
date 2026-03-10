@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 const xml2js = require('xml2js');
-const { MongoClient } = require('mongodb');
+const { ServerApiVersion } = require('mongodb');
 
 // =============== 环境变量配置 ===============
 const connectionConfig = {
@@ -48,7 +48,7 @@ async function connectToDatabase() {
 		// 创建 MongoClient 实例
 		const client = new MongoClient(connectionConfig.mongodbUri, {
 			serverApi: {
-				version: MongoClient.ServerApiVersion.v1,
+				version: ServerApiVersion.v1,
 				strict: true,
 				deprecationErrors: true,
 			},
@@ -189,9 +189,6 @@ exports.handler = async (event, context) => {
 			};
 		}
 
-		// 转换时间戳为日期
-		const dateTime = new Date(CreateTime * 1000); // CreateTime 是 Unix 时间戳
-
 		try {
 			// 获取 MongoDB 集合
 			const chatDataCollection = await getChatDataCollection();
@@ -219,17 +216,10 @@ exports.handler = async (event, context) => {
 				// 创建要插入的文档对象
 				const document = {
 					Content: Content[0],
-					CreateTime: dateTime,
 					MsgType: MsgType[0],
 					createdAt: new Date(),
-					// 可选：添加原始消息的更多字段
-					rawXML: event.body // 保存原始XML用于调试
 				};
 
-				// 可选：添加其他可能存在的字段
-				if (requestBody.xml.ToUserName) document.ToUserName = requestBody.xml.ToUserName[0];
-				if (requestBody.xml.FromUserName) document.FromUserName = requestBody.xml.FromUserName[0];
-				if (requestBody.xml.MsgId) document.MsgId = requestBody.xml.MsgId[0];
 
 				// 执行插入操作
 				const result = await chatDataCollection.insertOne(document);
