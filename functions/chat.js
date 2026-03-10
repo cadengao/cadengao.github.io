@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 const xml2js = require('xml2js');
-const { MongoClient } = require('mongodb');
+const { MongoClient, ServerApiVersion, Db } = require('mongodb');
 const axios = require("axios");
 
 // =============== 环境变量配置 ===============
@@ -52,7 +52,7 @@ async function connectToDatabase() {
 		await logContentWithGet('创建 MongoClient 实例');
 		const client = new MongoClient(connectionConfig.mongodbUri, {
 			serverApi: {
-				version: MongoClient.ServerApiVersion.v1,
+				version: ServerApiVersion.v1,
 				strict: true,
 				deprecationErrors: true,
 			},
