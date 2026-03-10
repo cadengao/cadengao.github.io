@@ -116,7 +116,7 @@ async function logContentWithGet(content) {
 				content: content
 			}
 		});
-		await logContentWithGet('记录成功:', response.data);
+		//await logContentWithGet('记录成功:', response.data);
 		return response.data;
 	} catch (error) {
 		console.error('记录失败:', error);
@@ -128,7 +128,7 @@ exports.handler = async (event, context) => {
 	context.callbackWaitsForEmptyEventLoop = false;
 	await logContentWithGet("1.开始");
 	await logContentWithGet('Received event:', JSON.stringify(event)); // Log the received event
-	const response = await axios({});
+
 	// 处理 GET 请求
 	if (event.httpMethod === 'GET') {
 		const {
@@ -290,6 +290,7 @@ exports.handler = async (event, context) => {
 			// await closeConnection();
 		}
 	}
+	await logContentWithGet("5.其他",event.httpMethod );
 
 	// 返回方法不允许的错误
 	return {
