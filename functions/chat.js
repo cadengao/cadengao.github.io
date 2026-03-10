@@ -23,13 +23,13 @@ const connectionConfig = {
 
 // 验证必要环境变量
 if (!connectionConfig.wxToken) {
-	await logContentWithGet('❌ 请设置 WX_TOKEN 环境变量');
+	console.error('❌ 请设置 WX_TOKEN 环境变量');
 }
 if (!connectionConfig.clearFlag) {
-	await logContentWithGet('❌ 请设置 CLEAR_FLAG 环境变量');
+	console.error('❌ 请设置 CLEAR_FLAG 环境变量');
 }
 if (!connectionConfig.mongodbUri) {
-	await logContentWithGet('❌ 请设置 MONGODB_URI 环境变量');
+	throw new Error('❌ 请设置 MONGODB_URI 环境变量');
 }
 
 // =============== MongoDB 连接配置 ===============
@@ -40,13 +40,16 @@ let cachedDb = null;
  * 连接到数据库
  */
 async function connectToDatabase() {
+	await logContentWithGet('connectToDatabase()');
 	// 如果已有缓存，直接返回
 	if (cachedDb) {
+		await logContentWithGet('connectToDatabase().cachedDb');
 		return cachedDb;
 	}
 
 	try {
 		// 创建 MongoClient 实例
+		await logContentWithGet('创建 MongoClient 实例');
 		const client = new MongoClient(connectionConfig.mongodbUri, {
 			serverApi: {
 				version: MongoClient.ServerApiVersion.v1,
@@ -59,9 +62,11 @@ async function connectToDatabase() {
 			minPoolSize: connectionConfig.minPoolSize,
 			maxIdleTimeMS: connectionConfig.maxIdleTimeMS
 		});
+		await logContentWithGet('client.connect()-开始');
 
 		// 连接到 MongoDB
 		await client.connect();
+		await logContentWithGet('client.connect()-结束');
 
 		// 发送 ping 命令确认连接成功
 		await client.db('admin').command({ ping: 1 });
@@ -110,7 +115,7 @@ async function closeConnection() {
 			cachedDb = null;
 		}
 	} catch (error) {
-		await logContentWithGet('关闭连接时出错:', error);
+		console.error('关闭连接时出错:', error);
 	}
 }
 // =============== MongoDB 连接配置结束 ===============
@@ -278,7 +283,7 @@ exports.handler = async (event, context) => {
 						insertedCount: result.insertedCount
 					}),
 				};
-				await logContentWithGet('Response:', response); // Log the response
+				//await logContentWithGet('Response:', response); // Log the response
 				return response;
 			}
 		} catch (error) {
@@ -316,9 +321,8 @@ exports.handler = async (event, context) => {
 };
 
 // 检查签名是否正确
-async function Check(signature, timestamp, nonce, token) {
-	const ret= signature === GetSignature(timestamp, nonce, token);
-	await logContentWithGet('signature, timestamp, nonce, token,ret,',signature, timestamp, nonce, token,ret)
+function Check(signature, timestamp, nonce, token) {
+	return signature === GetSignature(timestamp, nonce, token);
 }
 
 // 返回正确的签名
