@@ -256,17 +256,10 @@ exports.handler = async (event, context) => {
 				await logContentWithGet("4.post.insert",Content[0]);
 				const document = {
 					Content: Content[0],
-					CreateTime: dateTime,
 					MsgType: MsgType[0],
 					createdAt: new Date(),
-					// 可选：添加原始消息的更多字段
-					rawXML: event.body // 保存原始XML用于调试
 				};
 
-				// 可选：添加其他可能存在的字段
-				if (requestBody.xml.ToUserName) document.ToUserName = requestBody.xml.ToUserName[0];
-				if (requestBody.xml.FromUserName) document.FromUserName = requestBody.xml.FromUserName[0];
-				if (requestBody.xml.MsgId) document.MsgId = requestBody.xml.MsgId[0];
 
 				// 执行插入操作
 				const result = await chatDataCollection.insertOne(document);
