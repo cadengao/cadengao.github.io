@@ -1,7 +1,6 @@
+const ServerApiVersion = require('mongodb');
 const crypto = require('crypto');
 const xml2js = require('xml2js');
-const { MongoClient, ServerApiVersion, Db } = require('mongodb');
-const axios = require("axios");
 
 // =============== 环境变量配置 ===============
 const connectionConfig = {
@@ -120,25 +119,9 @@ async function closeConnection() {
 	}
 }
 // =============== MongoDB 连接配置结束 ===============
-async function logContentWithGet(content) {
-	try {
-		const response = await axios.get('http://43.142.242.91/api/values', {
-			params: {
-				content: content
-			}
-		});
-		//await logContentWithGet('记录成功:', response.data);
-		return response.data;
-	} catch (error) {
-		console.error('记录失败:', error);
-		throw error;
-	}
-}
+
 exports.handler = async (event, context) => {
-	// 处理 SIGINT 和 SIGTERM 信号
-	context.callbackWaitsForEmptyEventLoop = false;
-	await logContentWithGet("1.开始");
-	await logContentWithGet('Received event:', JSON.stringify(event)); // Log the received event
+	//console.log('Received event:', JSON.stringify(event)); // Log the received event
 
 	// 处理 GET 请求
 	if (event.httpMethod === 'GET') {
@@ -148,10 +131,8 @@ exports.handler = async (event, context) => {
 			nonce,
 			echostr
 		} = event.queryStringParameters || {};
-		await logContentWithGet("2.get");
 
 		if (Check(signature, timestamp, nonce, connectionConfig.wxToken)) {
-			await logContentWithGet("3.get.check");
 			return {
 				statusCode: 200,
 				headers: {
@@ -161,7 +142,6 @@ exports.handler = async (event, context) => {
 				body: echostr,
 			};
 		} else {
-			await logContentWithGet("3.get.!check");
 			return {
 				statusCode: 403,
 				headers: {
@@ -175,8 +155,7 @@ exports.handler = async (event, context) => {
 
 	// 处理 POST 请求
 	if (event.httpMethod === 'POST') {
-		await logContentWithGet('Raw body:', event.body); // Log the raw request body
-		await logContentWithGet("2.post");
+		//console.log('Raw body:', event.body); // Log the raw request body
 
 		// 解析 XML 请求体
 		let requestBody;
@@ -185,7 +164,7 @@ exports.handler = async (event, context) => {
 			const parser = new xml2js.Parser();
 			requestBody = await parser.parseStringPromise(event.body);
 		} catch (error) {
-			await logContentWithGet('Failed to parse XML:', error);
+			console.error('Failed to parse XML:', error);
 			return {
 				statusCode: 400,
 				headers: {
@@ -197,7 +176,6 @@ exports.handler = async (event, context) => {
 				}),
 			};
 		}
-		await logContentWithGet('requestBody', requestBody); // Log the raw request body
 
 		// 检查请求体中的必需字段
 		const {
@@ -205,10 +183,8 @@ exports.handler = async (event, context) => {
 			CreateTime,
 			MsgType
 		} = requestBody.xml;
-		await logContentWithGet('requestBody.xml',requestBody.xml)
 
 		if (!Content || !CreateTime || !MsgType) {
-			await logContentWithGet("!Content || !CreateTime || !MsgType")
 			return {
 				statusCode: 400,
 				headers: {
@@ -220,25 +196,18 @@ exports.handler = async (event, context) => {
 				}),
 			};
 		}
-		await logContentWithGet('Content',Content, ',CreateTime',CreateTime ,',MsgType',MsgType)
 
-		// 转换时间戳为日期
-		const dateTime = new Date(CreateTime * 1000); // CreateTime 是 Unix 时间戳
 
 		try {
-			await logContentWithGet("3.post.",Content);
 			// 获取 MongoDB 集合
-			const chatDataCollection = await getChatDataCollection();
-			await logContentWithGet("3.post.-",Content);
-
+			const chatDataCollection = await getChatDataCollection()
 			// 检查 Content 值
-			if (Content[0] === connectionConfig.clearFlag) {
-				await logContentWithGet("4.post.clear");
-				// 删除所有文档
-				const deleteResult = await chatDataCollection.deleteMany({});
-
-				await logContentWithGet(`已清空 ${connectionConfig.collectionName} 集合，删除文档数: ${deleteResult.deletedCount}`);
-
+			if (Content[0] ===  connectionConfig.clearFlag) {
+				// 删除记录的 SQL 语句
+				await chatDataCollection.deleteMany({});
+				// 关闭连接
+				//await closeConnection();
+				console.log('已清空表tb_wxchatrecords');
 				// 返回成功响应
 				return {
 					statusCode: 200,
@@ -247,22 +216,21 @@ exports.handler = async (event, context) => {
 						'Content-Type': 'application/json'
 					},
 					body: JSON.stringify({
-						message: 'All records deleted successfully.',
-						deletedCount: deleteResult.deletedCount
+						message: 'All records deleted successfully.'
 					}),
 				};
 			} else {
-				// 创建要插入的文档对象
-				await logContentWithGet("4.post.insert",Content[0]);
 				const document = {
 					Content: Content[0],
 					MsgType: MsgType[0],
-					createdAt: new Date(),
+					CreateTime: new Date(),
 				};
 
-
 				// 执行插入操作
-				const result = await chatDataCollection.insertOne(document);
+				const [result] = await chatDataCollection.insertOne(document);
+
+				// 关闭连接
+				//await closeConnection();
 
 				// 返回成功响应
 				const response = {
@@ -273,15 +241,14 @@ exports.handler = async (event, context) => {
 					},
 					body: JSON.stringify({
 						message: 'Record inserted successfully.',
-						id: result.insertedId, // MongoDB 使用 insertedId
-						insertedCount: result.insertedCount
+						id: result.insertId
 					}),
 				};
-				//await logContentWithGet('Response:', response); // Log the response
+				//console.log('Response:', response); // Log the response
 				return response;
 			}
 		} catch (error) {
-			await logContentWithGet('Database operation error:', error);
+			console.error('Database operation error:', error);
 			return {
 				statusCode: 500,
 				headers: {
@@ -296,11 +263,9 @@ exports.handler = async (event, context) => {
 		} finally {
 			// 注意：在云函数环境中，通常不需要手动关闭连接
 			// 因为连接池会被复用，但如果您想关闭连接，可以调用 closeConnection()
-			// await closeConnection();
+			await closeConnection();
 		}
 	}
-	await logContentWithGet("5.其他",event.httpMethod );
-
 	// 返回方法不允许的错误
 	return {
 		statusCode: 405,
@@ -326,19 +291,4 @@ function GetSignature(timestamp, nonce, token) {
 	const sha1 = crypto.createHash('sha1');
 	sha1.update(arrString);
 	return sha1.digest('hex');
-}
-
-// 添加进程退出时的清理钩子
-if (typeof process !== 'undefined') {
-	process.on('SIGINT', async () => {
-		await logContentWithGet('🔄 收到 SIGINT 信号，正在关闭数据库连接...');
-		await closeConnection();
-		process.exit(0);
-	});
-
-	process.on('SIGTERM', async () => {
-		await logContentWithGet('🔄 收到 SIGTERM 信号，正在关闭数据库连接...');
-		await closeConnection();
-		process.exit(0);
-	});
 }
