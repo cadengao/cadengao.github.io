@@ -39,16 +39,13 @@ let cachedDb = null;
  * 连接到数据库
  */
 async function connectToDatabase() {
-	await logContentWithGet('connectToDatabase()');
 	// 如果已有缓存，直接返回
 	if (cachedDb) {
-		await logContentWithGet('connectToDatabase().cachedDb');
 		return cachedDb;
 	}
 
 	try {
 		// 创建 MongoClient 实例
-		await logContentWithGet('创建 MongoClient 实例');
 		const client = new MongoClient(connectionConfig.mongodbUri, {
 			serverApi: {
 				version: ServerApiVersion.v1,
@@ -61,15 +58,12 @@ async function connectToDatabase() {
 			minPoolSize: connectionConfig.minPoolSize,
 			maxIdleTimeMS: connectionConfig.maxIdleTimeMS
 		});
-		await logContentWithGet('client.connect()-开始');
 
 		// 连接到 MongoDB
 		await client.connect();
-		await logContentWithGet('client.connect()-结束');
 
 		// 发送 ping 命令确认连接成功
 		await client.db('admin').command({ ping: 1 });
-		await logContentWithGet('✅ MongoDB 连接成功，Stable API v1');
 
 		// 获取数据库
 		const db = client.db(connectionConfig.dbName);
@@ -80,8 +74,8 @@ async function connectToDatabase() {
 
 		return db;
 	} catch (error) {
-		await logContentWithGet(`❌ 连接 MongoDB 失败: ${error.message}`);
-		await logContentWithGet(`❌ 错误堆栈: ${error.stack}`);
+		console.error(`❌ 连接 MongoDB 失败: ${error.message}`);
+		console.error(`❌ 错误堆栈: ${error.stack}`);
 
 		// 发生错误时清理缓存
 		cachedClient = null;
@@ -94,13 +88,8 @@ async function connectToDatabase() {
  * 获取指定集合
  */
 async function getChatDataCollection() {
-	try {
-		const db = await connectToDatabase();
-		return db.collection(connectionConfig.collectionName);
-	}
-	catch (error) {
-		await logContentWithGet('getChatDataCollection',error);
-	}
+	const db = await connectToDatabase();
+	return db.collection(connectionConfig.collectionName);
 }
 
 /**
@@ -110,7 +99,7 @@ async function closeConnection() {
 	try {
 		if (cachedClient) {
 			await cachedClient.close();
-			await logContentWithGet('🔌 MongoDB 连接已关闭');
+			console.log('🔌 MongoDB 连接已关闭');
 			cachedClient = null;
 			cachedDb = null;
 		}
